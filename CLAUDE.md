@@ -88,6 +88,31 @@ Luxury diamond ring inside an open black velvet jewelry box, dramatic side light
 
 ---
 
+## Import catalogue produit (grand volume)
+
+### Principe
+Ne pas saisir manuellement. Tout passe par un fichier CSV / Google Sheets importé en masse sur Shopify.
+Structure : **une ligne = un produit** (titre, description, prix, SKU, URLs images, variantes tailles, collections, tags).
+
+### Outils
+- **Matrixify** (~$20/mois) — importateur Shopify avancé, indispensable pour grands catalogues. Gère les mises à jour, images, métadonnées. L'importateur natif Shopify est trop limité.
+- **Claude** — génération de descriptions SEO en lot (50+ produits à la fois depuis un tableau de specs).
+- Images : héberger sur Google Drive public ou Dropbox → référencer par URL dans le CSV → Matrixify les aspire automatiquement.
+
+### Workflow
+1. Structurer le catalogue en Google Sheets (1-2 jours selon volume)
+2. Générer les descriptions en lot avec Claude (quelques heures)
+3. Héberger les images et récupérer leurs URLs publiques
+4. Importer via Matrixify (quelques heures)
+
+### Point de départ à clarifier
+La stratégie dépend du format actuel du catalogue :
+- Tableur Excel/Google Sheets existant → partir directement de là
+- Fiches PDF ou catalogue papier → extraction manuelle ou OCR d'abord
+- Références issues des fichiers `.csg` seulement → reconstruire les fiches depuis les références
+
+---
+
 ## Prochaines étapes
 
 - [ ] Ouvrir compte Shopify (14 jours gratuit)
