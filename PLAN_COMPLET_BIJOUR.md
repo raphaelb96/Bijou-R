@@ -1,1513 +1,853 @@
-# BIJOU-R — PLAN STRATÉGIQUE COMPLET
-### Version 3 · Réflexion Opus · 20 mai 2026
-> Ce document est la source de vérité de tout le projet Bijou-R.
-> Ne rien mettre en œuvre sans avoir lu ce document en entier.
+# PLAN COMPLET BIJOU-R — Stratégie Définitive
+
+> **Document stratégique de référence.** Tout ce qui est décidé est ici. Pour l'exécution opérationnelle pas-à-pas, voir `GUIDE_EXECUTION_PAS_A_PAS.txt`.
+>
+> **État du projet** : Phase 1 (Site + Optimisation + Automations) — ACTIVE
+> **Phase suivante** : Phase 2 (Marketing TikTok, Instagram, premières pubs)
+> **Date de référence** : Mai 2026
 
 ---
 
-## NOTE IMPORTANTE
-Le site de référence mentionné n'a pas été reçu dans la conversation — à renvoyer dès que possible.
-En attendant, les références utilisées sont : **Messika.com** (luxe FR), **Mejuri.com** (émotion), **James Allen** (configurateur diamants), **Brilliant Earth** (tunnel fiançailles), **Vrai.com** (DTC lab diamonds).
+## SOMMAIRE
+
+1. [Vision & Positionnement](#1-vision--positionnement)
+2. [Brand & Marque](#2-brand--marque)
+3. [Site Complet — Structure & Contenu](#3-site-complet--structure--contenu)
+4. [Catalogue Produits (10 SKUs)](#4-catalogue-produits-10-skus)
+5. [Tech Stack & Outils](#5-tech-stack--outils)
+6. [Automations](#6-automations)
+7. [Phase 2 — Marketing (À TRAITER PLUS TARD)](#7-phase-2--marketing--à-traiter-plus-tard)
+8. [Budget Réaliste Phase par Phase](#8-budget-réaliste-phase-par-phase)
+9. [Checklist de Lancement](#9-checklist-de-lancement)
+10. [Annexes — Références & Inspirations](#10-annexes--références--inspirations)
 
 ---
 
-# ARCHITECTURE GLOBALE DU PROJET
+## 1. VISION & POSITIONNEMENT
 
-```
-                    ┌──────────────────────────┐
-                    │      SHOPIFY ADVANCED     │
-                    │  bijou-r.com  (core)      │
-                    │  ┌─────────┬──────────┐   │
-                    │  │CATALOGUE│CONFIGURTR│   │
-                    │  │ normal  │  bague   │   │
-                    │  └─────────┴──────────┘   │
-                    └──────────┬───────────────┘
-                               │ webhooks
-              ┌────────────────┴────────────────┐
-              ▼                                 ▼
-      ┌───────────────┐                 ┌──────────────────┐
-      │  n8n (VPS)    │                 │     Klaviyo      │
-      │ Orchestrateur ├─────────────────► 18 flows email   │
-      └─┬──┬──┬──┬───┘                 └──────────────────┘
-        │  │  │  │
-        ▼  ▼  ▼  ▼
-   ┌──────┐ ┌──────┐ ┌───────┐ ┌──────────────┐
-   │Firely│ │Meshy │ │Claude │ │ ManyChat     │
-   │ API  │ │AI 3D │ │  API  │ │ IG + TikTok  │
-   │(photo│ │(GLB) │ │(blog  │ │              │
-   │ IA)  │ │      │ │ auto) │ │              │
-   └──────┘ └──────┘ └───────┘ └──────────────┘
-        ▲
-        │
-   ┌────┴────────────┐
-   │ Google Ads      │
-   │ Meta Ads        │
-   │ TikTok Ads      │
-   │ Triple Whale    │
-   └─────────────────┘
-```
+### 1.1 Le projet en une phrase
+**Bijou-R** : boutique de bijouterie en ligne (bracelets tennis, colliers, bagues, boucles d'oreilles) qui vend de l'atelier au client direct, avec un fondateur face-caméra, sur les marchés France + Israël (€ / ₪).
 
-**Pile technique complète :**
+### 1.2 La stratégie prix-ancre
+- **L'ancre** : Bracelet Tennis Signature Or Blanc à **24 990 €**.
+  But : choquer, créer l'effet "wow", servir de point de référence haut.
+- **Le héros commercial** : Bracelet Tennis Or Jaune 14k à **2 490 €**.
+  Bestseller attendu. Paraît "raisonnable" face à l'ancre.
+- **Le ticket d'entrée** : Bracelet Tennis Argent à **290 €**.
+  Recrutement, premier achat impulsif.
+- **Logique** : un visiteur qui voit 24 990 € puis 2 490 € perçoit le deuxième comme accessible. Sans l'ancre, 2 490 € paraît cher. C'est l'effet **point d'amarrage cognitif** (Tversky/Kahneman).
 
-| Outil | Rôle | Prix/mois |
+### 1.3 Le positionnement
+- **Luxe accessible** : matières nobles (or 18k, vermeil, diamants certifiés), prix sans la marge des boutiques physiques parisiennes.
+- **Atelier direct** : "De l'atelier au poignet, sans intermédiaire."
+- **Fondateur face caméra** : authenticité, le visage humain derrière la marque. Pas de marketing froid.
+- **Pas de soldes agressives, pas de faux timers, pas de "il ne reste que 2 en stock !!!"** : le luxe ne crie pas.
+
+### 1.4 Cibles
+- **Cible principale FR** : femmes 28-50 ans, CSP+/CSP++, urbaines (Paris, Lyon, Bordeaux, Côte d'Azur), achètent pour elles-mêmes (self-purchase 60%) ou en cadeau (40%).
+- **Cible secondaire IL** : femmes 25-45 ans, Tel Aviv / Herzliya / Ramat Gan, marché du bijou très mature.
+- **Insight client** : "Je veux du beau, du vrai, mais je refuse de payer 3x le prix d'une enseigne Place Vendôme."
+
+---
+
+## 2. BRAND & MARQUE
+
+### 2.1 Naming — Pourquoi "Bijou-R"
+- **Bijou** = ancrage catégorie, immédiat, universel en français.
+- **-R** = signature, ouverture (R comme "Rêve", "Royal", "Rare", "Rivière de diamants"). Le tiret crée une typographie distinctive.
+- **Avantages** : court (7 caractères), prononçable FR + EN ("bee-zhoo-arr"), mémorisable, le tiret permet le brand search ("bijou r" ramène facilement à nous).
+- **Risque** : possible confusion phonétique avec "bijoutier". Neutralisé par une charte typo très forte.
+
+**Alternatives si `bijou-r.com` indisponible** :
+1. `bijour.com` (sans tiret — plus simple à dicter)
+2. `bijou-r.fr` + `bijou-r.com` quand dispo
+3. `maisonbijour.com` (positionnement maison/atelier)
+4. `bijou-r.co` (acceptable mais moins premium)
+5. `bijour.paris` (TLD géographique fort)
+
+**Décision par défaut** : sécuriser `bijou-r.com` + `bijou-r.fr` + `bijour.com` en redirection.
+
+### 2.2 Dépôt de marque
+
+#### 2.2.1 INPI (France)
+- **URL** : https://www.inpi.fr/proteger-vos-creations/proteger-votre-marque
+- **Classes Nice à déposer** :
+  - **Classe 14** : métaux précieux, bijoux, pierres précieuses, montres (OBLIGATOIRE).
+  - **Classe 35** : services de vente au détail de bijoux, marketing.
+  - **Classe 25** : (optionnel) accessoires de mode si extension future.
+- **Coût** : 190 € pour 1 classe + 40 € par classe additionnelle. → **270 € pour classes 14 + 35**.
+- **Délai** : 5 mois en moyenne (publication BOPI à J+6 semaines, opposition possible 2 mois, enregistrement final si pas d'opposition).
+- **Durée** : 10 ans renouvelable.
+- **Avant dépôt** : recherche d'antériorité sur base data.inpi.fr — gratuite, 1h de travail.
+
+#### 2.2.2 EUIPO (Union Européenne)
+- **URL** : https://euipo.europa.eu
+- **Marque de l'Union Européenne (MUE)** : couvre 27 pays.
+- **Coût** : 850 € (1 classe) + 50 € (2e classe) + 150 € par classe supplémentaire. → **900 € pour classes 14 + 35**.
+- **Délai** : 4-6 mois.
+- **Quand le faire** : après validation du PMF (Product-Market Fit), pas au lancement. Le dépôt INPI suffit pour les 6-12 premiers mois.
+
+#### 2.2.3 Israel Patent Office (ILPO)
+- **URL** : https://www.gov.il/en/departments/israel_patent_office
+- **Coût** : ~1 600 ILS (~400 €) par classe.
+- **Délai** : 8-12 mois.
+- **Quand le faire** : seulement si les ventes Israël dépassent 20% du CA. Sinon, attendre.
+
+#### 2.2.4 Ordre recommandé
+1. **Mois 1** : Recherche antériorité INPI (gratuit).
+2. **Mois 1** : Dépôt INPI classes 14 + 35 → **270 €**.
+3. **Mois 6-9** : Si traction confirmée → EUIPO → **900 €**.
+4. **Mois 12+** : Si Israël > 20% du CA → ILPO → **800 €** (2 classes).
+
+### 2.3 Identité visuelle complète
+
+#### 2.3.1 Logo
+- **Logotype principal** : "Bijou-R" en Cormorant Garamond Light, le R légèrement majuscule, le tiret fin.
+- **Monogramme** : un "BR" entrelacé pour favicon, watermark photo, packaging.
+- **Versions à produire** :
+  - Logo positif noir sur blanc
+  - Logo négatif blanc sur noir
+  - Logo or `#C9A961` sur fond sombre (web hero)
+  - Logo monochrome pour packaging
+- **Fichiers à livrer** : `.svg`, `.png` (transparent 1x/2x/3x), `.pdf` vectoriel.
+- **Outil de création** : Adobe Illustrator (déjà payé) ou brief à un illustrateur Fiverr/Upwork (budget 150-400 €).
+
+#### 2.3.2 Palette de couleurs
+
+| Rôle | Hex | Usage |
 |---|---|---|
-| Shopify Advanced | Core boutique + checkout + multi-marché | 240 € |
-| n8n (VPS Hetzner) | Orchestrateur automations | 10 € |
-| Klaviyo | Email + SMS (18 flows) | 0-45 € |
-| Adobe Firefly API | Génération photos produit IA | 250 € |
-| Meshy AI Pro | Génération modèles 3D (.glb) | 25 € |
-| Claude API | Rédaction articles blog auto | Variable |
-| Gorgias | Helpdesk SAV centralisé | 60 € |
-| Triple Whale | Analytics unifié (ROAS réel) | 130 € |
-| Airtable | PIM produits + calendrier éditorial | 25 € |
-| Cloudinary | CDN images + transformations | 50 € |
-| ManyChat | Bots IG + TikTok | 15 € |
-| Metricool | Scheduling réseaux sociaux | 30 € |
-| Loox | Avis photos UGC | 10 € |
+| Noir profond | `#0A0A0A` | Texte principal, fonds dramatiques |
+| Blanc cassé | `#FAF7F2` | Fond global du site, respiration |
+| Or signature | `#C9A961` | Accents, CTA, prix, séparateurs |
+| Or chaud (hover) | `#B8924A` | États hover des CTA dorés |
+| Gris pierre | `#8A8580` | Texte secondaire, légendes |
+| Rouge bordeaux discret | `#5C1B26` | Édition limitée uniquement |
+
+**Règle** : 70% blanc cassé + 20% noir + 8% or + 2% accents. Jamais de couleurs vives.
+
+#### 2.3.3 Typographie
+
+- **Titres (display)** : **Cormorant Garamond** (Google Fonts, gratuit). Poids 300 et 500.
+  - H1 : 56px desktop / 36px mobile, letter-spacing -0.5px.
+  - H2 : 40px / 28px.
+  - H3 : 28px / 22px.
+- **Corps de texte** : **Inter** (Google Fonts, gratuit). Poids 400 et 600.
+  - Body : 16px, line-height 1.7.
+  - Légendes : 13px, letter-spacing 0.8px, UPPERCASE.
+- **CTA** : Inter 600, 14px, letter-spacing 1.2px, UPPERCASE.
+
+#### 2.3.4 Tone of voice — DO / DON'T
+
+**DO** :
+- Phrases courtes, élégantes. "Elle est pour moi."
+- Le fondateur parle à la première personne. "J'ai conçu ce bracelet parce que…"
+- Vocabulaire sensoriel : "tomber", "glisser", "épouser", "danser sur la peau".
+- Honnêteté sur la matière : "Or 14k. Pas de plaqué qui s'écaille."
+- Humour subtil, jamais grossier.
+
+**DON'T** :
+- Pas de superlatifs creux : "incroyable", "magnifique", "exceptionnel" sans justification.
+- Pas de jargon corporate : "expérience client premium", "solutions joaillières".
+- Pas d'urgence artificielle : "PLUS QUE 2H !!!", "STOCK LIMITÉ !!".
+- Pas d'émojis dans le copy du site (réseaux OK, modérément).
+- Pas de "cher(e) client(e)" — appelle par le prénom dans les emails.
+
+### 2.4 Les 5 piliers inattaquables de Bijou-R
+
+1. **L'atelier direct** : pas d'intermédiaires, pas de loyer Place Vendôme — donc 60% moins cher à qualité égale. Transparent sur la marge.
+2. **La traçabilité totale** : chaque diamant > 0.30ct livré avec certificat IGI/GIA. Or recyclé certifié RJC quand possible. Pierre par pierre.
+3. **Le visage du fondateur** : pas une marque sans tête. Chaque vidéo, chaque DM, chaque email signé. La confiance personnelle remplace les avis bidons.
+4. **L'essai 3D + AR avant achat** : viewer 3D natif sur chaque fiche, AR sur mobile. Le client voit la pièce en taille réelle sur son poignet AVANT.
+5. **Le prix juste, affiché** : pas de "prix sur demande", pas de soldes permanentes. Le prix d'aujourd'hui est le prix juste. Garantie de rachat partiel à 50% du prix initial pendant 5 ans.
+
+> Ces 5 piliers doivent apparaître **textuellement** sur la page À propos, et chacun servir de pilier d'argumentaire commercial sur les fiches produit.
+
+### 2.5 Mission, vision, raison d'être
+
+- **Mission** : Rendre le vrai bijou accessible aux femmes qui refusent de payer pour une vitrine.
+- **Vision** : Devenir la maison de joaillerie DTC francophone de référence d'ici 2030.
+- **Raison d'être** : "Parce qu'un bijou qui dure 50 ans ne devrait pas coûter 3 mois de salaire."
 
 ---
 
-# PARTIE 1 — FONDATIONS
+## 3. SITE COMPLET — STRUCTURE & CONTENU
 
-## ÉTAPE 1 — DOMAINE ET EMAILS
-
-### Domaine
-- **Priorité absolue :** acheter `bijou-r.com` avant tout le reste
-- Plateformes : Namecheap (~10 $/an) ou directement via Shopify Domains
-- Acheter aussi `.fr` et `.co.il` si le budget le permet (redirection vers .com)
-- Connecter dans Shopify : Paramètres → Domaines → Connecter un domaine existant
-
-### Emails (après achat du domaine)
-- Google Workspace (~6 $/mois pour 5 comptes)
-
-| Adresse | Usage |
-|---|---|
-| `hello@bijou-r.com` | Contact client principal |
-| `commandes@bijou-r.com` | SMTP Shopify pour confirmations |
-| `support@bijou-r.com` | SAV / Gorgias |
-| `pro@bijou-r.com` | Collabs influenceurs / B2B |
-
----
-
-## ÉTAPE 2 — SHOPIFY CONFIGURATION
-
-### Plan
-- **Advanced (240 €/mois)** — obligatoire pour : Shopify Flow + multi-marché FR/IL natif + checkout extensions
-
-### Thème
-- **Impulse** (Archetype Themes, 380 $) ou **Prestige** (Maestrooo, 320 $)
-- Pas Dawn (gratuit) : il manque les sections lookbook, le drawer cart upsell, et le support natif 3D bien intégré
-- Personnalisations clés à appliquer dès le départ :
-  - Police : Cormorant Garamond (titres) + Inter (corps de texte)
-  - Palette : noir `#0A0A0A` + blanc cassé `#FAF7F2` + or champagne `#C9A961`
-  - Animation hover produit : zoom 1.05x + switch photo studio → photo portée
-  - Navigation transparente qui se solidifie au scroll
-
-### Pages à créer
-
-| Page | Contenu essentiel |
-|---|---|
-| **Home** | Vidéo héro 8s, piliers USP, bracelet tennis ancre, catégories, témoignages, teaser configurateur, capture email |
-| **À propos / La Maison** | Storytelling fondateur, atelier, philosophie |
-| **Notre Atelier** | Process fabrication, certifications RJC / Kimberley Process |
-| **Le Journal** | Blog AEO (cf Partie 4) |
-| **Créer ma bague** | Configurateur bague personnalisée (cf Partie 3) |
-| **Guide des tailles** | Tableau FR/IL/US + méthode mesure |
-| **Garantie à vie** | Couverture, formulaire activation |
-| **Livraison & Retours** | FR 48h gratuit >150€, IL DHL 3-5j, retours 30j |
-| **FAQ** | 25-30 questions structurées avec schema FAQPage |
-| **Programme fidélité** | Cercle Bijou-R — paliers Or/Platine/Diamant |
-| **Carte cadeau** | 50/100/250/500/1000 € |
-| **Contact** | Formulaire + WhatsApp |
-| **Pages légales** | CGV, CGU, Mentions, Confidentialité, Retours |
-
-### Paiements (dans cet ordre)
-
-1. **Shopify Payments** (FR EUR) — Visa/Mastercard/CB
-2. **Stripe** (IL ILS) — Shopify Payments non disponible en Israël
-3. **PayPal Express** (FR + IL)
-4. **Apple Pay + Google Pay** (automatique)
-5. **Alma** (paiement 3x/4x — plus français que Klarna) — crucial sur paniers >300 €
-6. **Klarna** (paiement 4x — couverture internationale)
-7. **Bit / Tranzila** — paiement local israélien (indispensable pour le marché IL)
-8. Cryptos via Coinbase Commerce (optionnel, niche luxe)
-
-Configuration **Shopify Markets** : FR (EUR), IL (ILS), EU (EUR), Monde (EUR). Géolocalisation IP + sélecteur manuel de devise en header.
-
-### Metafields produits (namespace `bijour`)
-
-| Champ | Type | Description |
-|---|---|---|
-| `bijour.materiau` | text | Acier 316L / Plaqué or / Or massif |
-| `bijour.carats_or` | number | 14 / 18 / 24 |
-| `bijour.pierre_principale` | text | Diamant / Saphir / Rubis |
-| `bijour.carat_pierre` | decimal | ex: 2.0 |
-| `bijour.purete_diamant` | text | VS1 / VVS / SI1 |
-| `bijour.couleur_diamant` | text | D / E / F / G |
-| `bijour.certification` | file | PDF certificat GIA/IGI |
-| `bijour.poids_grammes` | decimal | ex: 8.5 |
-| `bijour.origine` | text | France / Italie |
-| `bijour.delai_fabrication` | number | En jours |
-| `bijour.modele_3d` | file | URL .glb (auto-rempli par pipeline Meshy) |
-| `bijour.story` | multiline | Histoire de la pièce |
-
-### Trust signals (sur toutes les fiches produit)
-
-- Bandeau certifications : RJC, Kimberley Process, Made in France
-- Badge "Garantie à vie" visible
-- Badge "Paiement 100% sécurisé 3D Secure"
-- Bloc "Vu dans" (logos presse — à obtenir)
-- SIRET + adresse atelier en footer
-- Numéro de téléphone + WhatsApp visibles
-
----
-
-# PARTIE 2 — OPTIMISATION ÉMOTIONNELLE DU SITE
-
-## LA PHILOSOPHIE : "L'effet vitrine Place Vendôme"
-
-Un client qui entre sur Bijou-R doit ressentir en moins de **3 secondes** :
-1. **Légitimité** — "C'est une vraie maison de joaillerie"
-2. **Désir** — "Je veux toucher / posséder / offrir"
-3. **Appartenance** — "C'est pour des gens comme moi"
-
-**Règle des 3 sorties :** aucun visiteur ne quitte sans **acheter**, **donner son email**, ou **être obsédé** par un produit (retargeting déclenché).
-
----
-
-## LES 5 DÉCLENCHEURS ÉMOTIONNELS BIJOUTERIE
-
-| Déclencheur | Cible psychologique | Application Bijou-R |
-|---|---|---|
-| **IDENTITÉ** | "Ce bijou dit qui je suis" | Copy : "La femme Bijou-R ose, brille, transmet" |
-| **AMOUR** | Cadeau, alliance, fiançailles | Tunnel "Pour Elle / Pour Lui" + configurateur |
-| **STATUT** | Réussite, signe extérieur | Prix ancre 24 990 €, certificats GIA, packaging luxe |
-| **SELF-LOVE** | "Je me l'offre" | Copy : "Vous n'avez besoin de personne pour briller" |
-| **TRANSMISSION** | Héritage, génération | "Le bijou que votre fille portera dans 30 ans" |
-
----
-
-## ARCHITECTURE ÉMOTIONNELLE PAGE PAR PAGE
-
-### A. HOMEPAGE — "Le premier coup d'œil"
-
-**Zone visible sans scroll (above the fold) :**
+### 3.1 Architecture des pages
 
 ```
-[VIDÉO HÉRO — 8 secondes en boucle silencieuse]
-Plan 1 : macro d'un diamant qui tourne, lumière qui joue
-Plan 2 : main féminine qui ferme un fermoir bracelet tennis
-Plan 3 : coupe rapide — le bracelet glisse sur le poignet
-
-Bouton son optionnel [♪] → ASMR : tintement de chaînes
-
-[HEADLINE]
-"Le bijou que vous porterez toute votre vie."
-
-[SOUS-HEADLINE]
-"Diamants certifiés GIA. Sertissage à la main. Livraison sécurisée en 48h."
-
-[CTA PRINCIPAL]          [CTA SECONDAIRE]
-"Je découvre"           "Créer ma bague unique →"
+/                              → Homepage
+/collections/all               → Tout
+/collections/bracelets-tennis  → Bracelets Tennis (collection phare)
+/collections/colliers          → Colliers
+/collections/bagues            → Bagues
+/collections/boucles           → Boucles d'oreilles
+/collections/sets              → Sets & Cadeaux
+/products/[handle]             → 10 fiches produit
+/pages/notre-histoire          → L'histoire du fondateur
+/pages/latelier                → Notre atelier (savoir-faire, photos)
+/pages/creer-ma-bague          → Configurateur (Phase 2)
+/pages/garantie-rachat         → Garantie rachat 50% / 5 ans
+/pages/tracabilite             → Certifications, RJC, GIA, IGI
+/pages/livraison-retours       → Conditions
+/pages/guide-tailles           → Guide tailles bracelets, bagues, colliers
+/pages/contact                 → WhatsApp + email + DM
+/blog/journal                  → Le Journal (articles AEO)
+/account                       → Espace client (Shopify natif)
+/cart                          → Panier (drawer side)
+/checkout                      → Tunnel d'achat (Shopify natif)
 ```
 
-**Sections homepage dans l'ordre (stratégique) :**
+### 3.2 Homepage — Structure émotionnelle (sections dans l'ordre)
 
-1. **Bandeau "As Seen In"** — logos Vogue, Elle, Marie Claire (à obtenir, placement RP)
-2. **Best-sellers** avec badge "127 personnes regardent" (Fomo app)
-3. **Catégories visuelles** — Bracelets / Colliers / Bagues / Boucles (photos macro, pas catalogue)
-4. **"Pourquoi Bijou-R"** — 4 piliers (Diamants certifiés / Atelier français / Garantie à vie / Livraison sécurisée)
-5. **Section "Le Signature"** — bracelet tennis ancre 24 990 € en hero, seul, majestueux
-6. **Teaser configurateur** — "Créez la bague qu'aucune autre femme ne possède →"
-7. **Témoignages vidéo** — UGC clientes qui montrent leur bijou
-8. **Derniers articles du Journal** (AEO + retour visites)
-9. **Capture email** — "Recevez notre guide *Choisir son diamant* + 10% sur votre 1ère commande"
+**Section 1 — Hero vidéo** (au-dessus du fold)
+- Vidéo silencieuse en boucle, format 16:9 desktop / 9:16 mobile : poignet de femme, bracelet tennis qui glisse, plan macro lumière dorée.
+- Overlay texte : *"Le bracelet tennis. Réinventé en atelier."*
+- Sous-titre : *"De 290 € à 24 990 €. Toujours vrai. Jamais surfacturé."*
+- 2 CTA : `[Découvrir les bracelets]` (or plein) + `[Voir l'atelier]` (outline blanc).
+- Durée vidéo : 8 secondes en boucle, fichier ≤ 2 Mo (compression HEVC + MP4 fallback).
 
----
-
-### B. PAGE CATÉGORIE — "Le rayon"
-
-- **Bannière héro** avec citation émotionnelle spécifique :
-  > *"Un bracelet tennis, c'est l'élégance qui ne demande pas la parole."*
-- **Filtres intelligents** : Métal / Carats / Budget / Occasion (Mariage, Anniversaire, Self-gift)
-- **Tri par défaut** : "Coup de cœur" (ordre manuel choisi — pas alphabétique)
-- **Hover sur produit** : switch vers photo portée + apparition prix
-- **Badges dynamiques** : "Plus que 2 en stock" / "Nouveauté" / "Le préféré des clientes" / "Vu 89 fois aujourd'hui"
-- **Mini-quiz flottant** : "Pas sûre ? Trouvez VOTRE bijou en 30 secondes →" (capture email + segmente Klaviyo)
-
----
-
-### C. FICHE PRODUIT — "Le moment du désir"
-
-**Layout desktop :**
-
+**Section 2 — La promesse en 3 lignes**
 ```
-[GALERIE — 60% gauche]            [INFOS — 40% droite]
-  Photo 1 : macro studio           Nom du bijou
-  Photo 2 : portée (poignet/cou)   "Sertie à la main à Paris"
-  Photo 3 : échelle (avec main)
-  Photo 4 : détail sertissage      Prix : 1 290 €
-  Photo 5 : packaging écrin        ou 4x 322,50€ sans frais (Alma)
-  Vidéo 360° ASMR
-  VIEWER 3D NATIF SHOPIFY           Description courte (3 lignes émo.)
-  [Bouton AR sur mobile]
-                                    Sélecteur taille + guide popup
-                                    Sélecteur métal (Or jaune/blanc/rose)
-                                    Gravure offerte → champ 15 car.
-                                    [Preview gravure sur 3D live]
-
-                                    ┌──────────────────────────┐
-                                    │   "Elle est pour moi →"  │
-                                    └──────────────────────────┘
-
-                                    "Essayer virtuellement (AR)"
-
-                                    ⏱ Commandez dans 4h 12min
-                                    → Livraison garantie mercredi
-
-                                    [Accordéons]
-                                    ✓ Caractéristiques techniques
-                                    ✓ Certificat GIA (PDF)
-                                    ✓ Livraison & retour
-                                    ✓ Garantie à vie
+Or 14k, 18k, diamants certifiés.
+Pas de boutique. Pas de marge cachée.
+Le prix juste, livré chez vous.
 ```
 
-**Sous le fold :**
-- **Histoire du bijou** — 2 paragraphes émotionnels + inspiration
-- **Vidéo atelier** 15 secondes : l'artisan qui sertit (sans son)
-- **Section unboxing** : 4 photos packaging — boîte cuir, écrin velours, carte manuscrite, chiffon soie
-- **Reviews photos** (Loox / Judge.me) — minimum 12 avant ouverture
-- **"Souvent acheté avec"** — cross-sell (écrin supplémentaire, entretien)
-- **"Vous pourriez aussi aimer"** — modèles similaires
-- **FAQ produit** (schema FAQPage — 5-8 questions spécifiques au produit)
+**Section 3 — Le prix ancre (frappe psychologique)**
+- Image du Bracelet Signature 24 990 € en grand, lumière sombre.
+- Titre : *"Le bracelet tennis le plus pur que nous fabriquons."*
+- Prix affiché en or : **24 990 €**
+- Petit texte : *"Or blanc 18k. 5 carats de diamants F-VVS. Certifié GIA. Édition de 12 pièces signées."*
+- CTA : `[Voir la pièce]` → fiche produit.
+
+**Section 4 — La transition (effet d'amarrage)**
+- Texte centré : *"Ou, le même esprit, pour vingt fois moins."*
+- Carrousel 3 produits : 2 490 € (héros) + 890 € + 290 €.
+- Chaque produit affiche prix gras + petit texte matière.
+
+**Section 5 — Grille des catégories** (4 cases carrées)
+- Bracelets · Colliers · Bagues · Boucles
+- Image macro + nom + lien collection.
+
+**Section 6 — Le fondateur (vidéo intégrée)**
+- Vidéo 60 secondes, fondateur face caméra dans l'atelier.
+- Script type : *"Bonjour, je suis [Nom]. J'ai créé Bijou-R parce que [raison]. Ce que vous achetez ici, c'est ce que je porterais à ma propre femme. Voici comment on travaille."*
+- CTA : `[Découvrir l'atelier]`
+
+**Section 7 — Les 5 piliers (icônes)**
+- Atelier direct · Traçabilité · Fondateur présent · Essai 3D + AR · Rachat 5 ans.
+
+**Section 8 — Le Journal (3 derniers articles)**
+- Cartes : image + titre + extrait + lien.
+
+**Section 9 — Témoignages clients vidéo** (Phase 2 — à activer dès les premières ventes)
+- Au lancement : remplacer par "Comme vu dans..." (cibler 1-2 médias FR avant lancement) OU section "Nos engagements".
+
+**Section 10 — Capture email (avant footer)**
+- *"Recevez l'accès aux nouvelles pièces 48h avant tout le monde."*
+- Champ email + CTA `[Rejoindre]`.
+- Mention RGPD discrète sous le champ.
+
+**Section 11 — Footer**
+- Colonnes : Maison (Notre histoire, Atelier, Journal) · Aide (Livraison, Retours, Guide tailles, Contact) · Services (Garantie rachat, Traçabilité, Configurateur) · Légal (CGV, Mentions, Confidentialité, Cookies).
+- Liens IG, TikTok, WhatsApp.
+- Sélecteur devise EUR / ILS / USD.
+- Sélecteur langue FR / EN / HE.
+
+### 3.3 Fiche produit — Structure type
+
+**Haut de page** :
+- Galerie : 6 images + 1 vidéo + viewer 3D (model-viewer Shopify natif).
+- À droite : Titre / sous-titre matière / prix / variantes (taille) / quantité / CTA `[Elle est pour moi]` (or plein) / `[Ajouter à ma sélection]` (wishlist, outline) / `[Voir en AR]` (mobile only).
+- Bandeau confiance sous CTA : *"Livraison offerte · Retour 30 jours · Rachat 50% pendant 5 ans · Certificat inclus"*.
+
+**Description (accordéons)** :
+1. **L'histoire** — pourquoi cette pièce existe, qui l'a dessinée.
+2. **Les matières** — détail or, carats, pureté, provenance.
+3. **Les dimensions** — longueur, largeur, poids en grammes.
+4. **Le certificat** — IGI/GIA si applicable, photo du certificat.
+5. **L'entretien** — comment nettoyer, stocker.
+6. **Livraison & retours** — délais, conditions.
+
+**Sous la fiche** :
+- *"On a aussi conçu ces pièces dans le même esprit"* (4 produits liés).
+- Avis Judge.me (Phase 2, dès qu'il y a des avis).
+
+### 3.4 Page "Notre histoire" (à propos)
+
+- 1500-2000 mots.
+- Structure : photo grand format du fondateur dans l'atelier + récit en 5 actes :
+  1. Le déclic (l'achat raté chez un grand joaillier).
+  2. La rencontre avec l'atelier.
+  3. La décision (créer Bijou-R).
+  4. Les 5 piliers (réaffirmés).
+  5. L'invitation (à devenir cliente).
+
+### 3.5 Page "L'Atelier"
+
+- 6-8 photos macro de l'atelier (mains, outils, sertissage, polissage).
+- Vidéo 90 secondes "Une journée à l'atelier".
+- Texte : qui sont les artisans (anonymisés mais réels), où, depuis quand.
+- Mention RJC, certifications.
+
+### 3.6 Page "Garantie Rachat"
+
+- Promesse claire : "Pendant 5 ans, nous rachetons votre pièce à 50% de son prix initial."
+- Comment ça marche en 3 étapes.
+- FAQ : pourquoi, conditions (état correct, certificat), exclusions.
+- C'est un argument de confiance qui justifie le prix.
+
+### 3.7 Configurateur `/pages/creer-ma-bague` — Phase 2
+
+- Étapes : Forme (Solitaire, Trilogie, Pavé) → Métal (Or jaune/blanc/rose 14k/18k) → Carat (0.30 / 0.50 / 0.70 / 1ct+) → Pureté (G-VS, F-VVS) → Gravure (optionnelle, 3 lignes).
+- Prix mis à jour en temps réel.
+- Visuel 3D qui change selon les choix (via Shopify metafields ou app Kickflip / Zakeke).
+- Délai de fabrication affiché (4-6 semaines).
+
+### 3.8 Blog `/blog/journal` — AEO (Answer Engine Optimization)
+
+- 2 articles/semaine, automation n8n + Claude API (Phase 1.5).
+- Articles ciblés requêtes : *"Comment choisir un bracelet tennis"*, *"Différence entre or 14k et 18k"*, *"Pourquoi un diamant lab vaut autant qu'un naturel"*, *"Guide tailles bague France/Israël"*.
+- Format : 1200-2000 mots, structure H2/H3, FAQ schema, image macro, CTA produit en bas.
+- Optimisé pour Google + Perplexity + ChatGPT (réponse directe, citations).
 
 ---
 
-### D. PANIER — "L'instant fragile"
+## 4. CATALOGUE PRODUITS (10 SKUs)
 
-C'est ici qu'on perd 70% des clients. Tout doit rassurer et accélérer.
-
-- **Panier slide-in** (pas nouvelle page — rester dans le flow)
-- **Image macro du bijou** + nom + prix + gravure si choisie
-- **Barre de progression** : "Plus que 290 € pour la livraison express offerte 🚚"
-- **Garanties répétées** sous le CTA :
-  - "Livraison sécurisée FedEx assurée"
-  - "Retour gratuit 30 jours"
-  - "Garantie à vie"
-- **Upsell intelligent** : "Ajoutez l'écrin de voyage (49€) — offert au-delà de 2 000 €"
-- **CTA** : "Finaliser mon écrin →" (pas "Payer")
-- **Alma/Klarna affiché** : "Payez en 4 fois sans frais"
-
----
-
-### E. CHECKOUT — "Zéro friction"
-
-- **Shopify Pay / Apple Pay / Google Pay** en haut de page (one-click)
-- Email capturé en premier (même si abandon → flow Klaviyo)
-- Pas de création de compte obligatoire
-- "Vos données sont chiffrées SSL 256-bit" sous chaque étape
-- Récap visuel du bijou toujours visible à droite
-- Badge "Verified by Stripe" + logos cartes
-- Champ "Code promo" discret (pas en évidence — sinon les clients sortent chercher un code)
-
----
-
-### F. POST-ACHAT — "Le client devient ambassadeur"
-
-```
-Page de confirmation (pas juste un récap commande) :
-
-"Bravo. Vous venez de choisir un bijou que vous porterez
-toute votre vie."
-
-[Vidéo 20 secondes : préparation du colis dans l'atelier,
-ruban doré, cire de sceau, carte manuscrite]
-
-CE QUI ARRIVE MAINTENANT :
-✓ Aujourd'hui : votre bijou est confié à notre maître-sertisseur
-✓ Demain : contrôle qualité + emballage à la main
-✓ J+2 : départ FedEx assuré
-✓ J+3 : il est entre vos mains
-
-[Tracker visuel animé]
-
-PENDANT L'ATTENTE :
-→ Téléchargez le guide d'entretien de votre bijou
-→ Rejoignez notre cercle privé Instagram (@bijou.r)
-→ Parrainez une amie : 50€ pour elle, 50€ pour vous
-
-[CTA bonus]
-"Composez VOTRE prochaine pièce →" (vers configurateur)
-```
-
----
-
-## MICRO-MOMENTS D'ÉMOTION (les détails qui transforment)
-
-| Moment | Implémentation | Impact |
-|---|---|---|
-| Hover produit | Switch photo studio → portée + zoom 1.05x | +18% temps page |
-| Scroll homepage | Parallaxe douce, fade-in textes | Premium feel |
-| Son ASMR | Bouton optionnel : tintement chaînes, écrin qui s'ouvre | Mémorable, partageable |
-| Ouverture fiche produit | Bijou "apparaît" en 0.4s, fondu depuis fond blanc | Effet vitrine |
-| Ajout au panier | Animation : le bijou vole vers l'icône panier | Gamification |
-| Viewer 3D | Rotation auto 5s puis attente interaction | Engagement +35% |
-| Gravure live | Le texte apparaît sur le bijou 3D en temps réel | Attachement instantané |
-| Exit intent | Popup : "Avant de partir... 10% sur votre 1ère commande" | Récupère 8% |
-| Email capture | Popup après 30s OU 50% scroll — jamais immédiat | +12% conversions |
-
----
-
-## FOMO, SCARCITÉ, PREUVE SOCIALE
-
-**À placer stratégiquement :**
-
-- Homepage : "Rejoint par 14 287 femmes qui aiment les vrais bijoux"
-- Catégorie : badges live "Vu 23 fois cette heure"
-- Fiche produit :
-  - "Plus que 3 en stock" (réel — basé sur inventaire Shopify)
-  - "5 personnes regardent cette pièce" (Fomo app)
-  - "Camille de Lyon a acheté ce bracelet il y a 12 minutes" (notif sociale)
-- Panier : "Votre panier est réservé 15 minutes" (timer doux)
-- Checkout : "Livraison express disponible pour la Fête des Mères — commandez avant le 22/05"
-
-**Apps recommandées :** Fomo, Loox, Trustoo, Back in Stock
-
----
-
-## STRATÉGIE DE RÉDUCTIONS (sans dévaluer la marque)
-
-**Règle absolue :** jamais de "-50%" sur la homepage. Une maison de joaillerie ne brade pas.
-
-| Mécanisme | Application | Effet psychologique |
-|---|---|---|
-| **Welcome offer** | -10% via email 1ère commande | Capture email + entry premium |
-| **Gravure offerte** | À partir de 500 € | Valeur ajoutée, pas remise |
-| **Écrin de voyage** | Offert au-delà de 2 000 € | Cadeau, pas discount |
-| **Livraison express** | Offerte au-delà de 800 € | Service premium |
-| **Cercle Bijou-R VIP** | Après 1er achat : -15% à vie + prélancement | Fidélité |
-| **Parrainage** | 50 € parrain + 50 € filleul | Bouche-à-oreille |
-| **Birthday gift** | -20% le mois d'anniversaire | Émotionnel pur |
-| **Diamond Days** (2x/an) | "Nos diamants à tarif atelier — 72h" | Événementiel, justifié |
-
-**À bannir :** Black Friday classique (-30-40%), codes "BIJOU10" affichés partout, popups remise agressifs sur la homepage.
-
----
-
-## COPY ÉMOTIONNEL — EXEMPLES CONCRETS
-
-**Headlines :**
-- "Le bijou n'est pas un accessoire. C'est une mémoire qu'on porte."
-- "Elle ne se demande pas si on la remarque. Elle le sait."
-- "Pour les femmes qui ne demandent pas la permission de briller."
-- "Ce que vous portez, vos petites-filles le porteront aussi."
-
-**CTA émotionnels (jamais "Acheter") :**
-
-| Contexte | CTA |
-|---|---|
-| Homepage | "Je découvre →" |
-| Catégorie | "Voir cette pièce →" |
-| Fiche produit | **"Elle est pour moi"** |
-| Configurateur | "Je crée ma bague unique →" |
-| Newsletter | "Je rejoins le cercle Bijou-R" |
-| Panier | "Finaliser mon écrin →" |
-| Wishlist | "Garder ce bijou en mémoire" |
-
-**Structure description produit :**
-
-```
-[Accroche émotionnelle — 1 ligne]
-"Elle se glisse au poignet comme une promesse silencieuse."
-
-[Histoire courte — 3 lignes]
-"Inspirée des bracelets portés par Chris Evert en 1987, cette pièce
-réunit 4,2 carats de diamants brillants certifiés GIA, sertis
-à la main dans notre atelier parisien."
-
-[Caractéristiques techniques — bullets]
-✓ Or 18 carats — 18,4g
-✓ 47 diamants taille brillant — 4,2 ct total
-✓ Couleur F-G / Pureté VS1-VS2
-✓ Certificat GIA inclus
-✓ Garantie à vie
-
-[Réassurance finale]
-"Livrée dans son écrin de cuir, accompagnée du certificat d'authenticité
-signé par notre maître-joaillier."
-```
-
----
-
-## EXPÉRIENCE UNBOXING — Vendue AVANT l'achat
-
-**Section dédiée sur chaque fiche produit — carrousel 5 photos :**
-
-```
-Photo 1 : Boîte extérieure cuir noir, logo Bijou-R à chaud en doré
-Photo 2 : Ouverture de la boîte (point de vue main, effet unboxing)
-Photo 3 : Écrin intérieur velours, bijou serti
-Photo 4 : Carte manuscrite + certificat sur papier vergé
-Photo 5 : Sachet de soie + chiffon d'entretien monogrammé
-
-Caption :
-"Chaque bijou Bijou-R arrive comme un événement. Écrin de cuir signé,
-certificat sur papier vergé, carte manuscrite. Parce que recevoir
-un bijou ne devrait jamais ressembler à recevoir un colis."
-```
-
----
-
-## STRATÉGIE PRIX ANCRE (LE BANGER)
-
-**Catalogue structuré en 5 niveaux :**
-
-| Position | Produit | Prix € | Rôle |
+| # | Nom | Prix | Rôle |
 |---|---|---|---|
-| **ANCRE** | Bracelet Tennis Signature Or Blanc 18k 2ct | **24 990 €** | Choque. Légitime TOUT. |
-| **PREMIUM** | Tennis Or Blanc 18k 1ct | 6 990 € | Aspiration |
-| **BESTSELLER** | Tennis Or Jaune 14k | 2 490 € | Sweet spot marge + volume |
-| **ENTRÉE** | Tennis Vermeil 0.5ct | 890 € | 1er achat |
-| **TRAFIC** | Tennis Argent | 290 € | Volume + cadeau |
+| 1 | Bracelet Tennis Signature Or Blanc 18k 5ct | **24 990 €** | L'ANCRE |
+| 2 | Bracelet Tennis Or Blanc 18k 1ct | 6 990 € | Premium |
+| 3 | Bracelet Tennis Or Jaune 14k 0.7ct | **2 490 €** | BESTSELLER |
+| 4 | Bracelet Tennis Vermeil 0.5ct | 890 € | Accessible |
+| 5 | Bracelet Tennis Argent 925 | 290 € | Entrée de gamme |
+| 6 | Collier Rivière Diamants Or Blanc 18k 2ct | 1 890 € | Statement |
+| 7 | Collier Pendentif Diamant Solitaire 0.3ct | 590 € | Cadeau |
+| 8 | Bague Solitaire Or Blanc 18k 0.5ct | 1 490 € | Fiançailles |
+| 9 | Boucles Créoles Or 18k | 449 € | Quotidien |
+| 10 | Set Cadeau Collier + Boucles Or 14k | 790 € | Cross-sell |
 
-**Gamification Alma sur le bestseller :**
-> "4 × 622 € sans frais" — psychologiquement, 2 490 € devient digérable.
+### 4.1 Copy émotionnel par produit (exemples)
 
-**Comparatif affiché dans le configurateur :**
-> "Pour la même bague chez Tiffany : env. 12 500 €
-> Pour la même bague chez Cartier : env. 14 200 €
-> Bijou-R, atelier direct : 7 480 €"
+**Produit 1 — Bracelet Tennis Signature Or Blanc 24 990 €**
+> Titre : *Le Bracelet Signature*
+> Sous-titre : *Or blanc 18k · 5 carats · Diamants F-VVS · Édition de 12 pièces*
+> Description :
+> *"Il existe parce qu'on a voulu prouver qu'on savait le faire. Cinq carats de diamants F-VVS, chacun serti à la main sur une chaîne d'or blanc 18 carats. Douze pièces. Pas treize. Chaque bracelet est gravé du numéro de la série et signé du fondateur. Si vous achetez celui-là, vous achetez aussi un certificat GIA et un coffret en cuir noir cousu à Florence. Et la garantie que vous ne croiserez personne d'autre qui porte le même."*
+
+**Produit 3 — Bracelet Tennis Or Jaune 14k 2 490 € (HÉROS)**
+> Titre : *Le Bracelet Tennis Or Jaune*
+> Sous-titre : *Or jaune 14k · 0.7 carat de diamants · Le bestseller*
+> Description :
+> *"C'est celui qu'on porte tous les jours. Or jaune 14 carats massif, pas plaqué. Soixante-dix points de diamants — assez pour briller, pas trop pour ne plus oser le mettre. Le fermoir glisse en silence. On l'oublie au poignet, et puis quelqu'un nous le remarque, et on sourit. Si vous deviez en choisir un, c'est probablement celui-là."*
+
+**Produit 5 — Bracelet Tennis Argent 290 €**
+> Titre : *Le Bracelet Tennis Argent*
+> Sous-titre : *Argent 925 · Zircons cubiques · Le premier*
+> Description :
+> *"Le premier bracelet tennis qu'on offre, qu'on s'offre. Argent massif 925, zircons cubiques taille brillant, fermoir double sécurité. Il n'est pas en or. Il n'est pas en diamants. Mais il est bien fait, et il dure. Considérez-le comme un essayage. Si vous l'aimez, le 14k vous attendra."*
+
+### 4.2 Metafields Shopify à créer (pour chaque produit)
+
+- `metal_type` (text) : Or 14k / Or 18k / Vermeil / Argent 925
+- `metal_color` (text) : Jaune / Blanc / Rose
+- `total_carat_weight` (number) : 0.5
+- `diamond_clarity` (text) : VVS1 / VS2 / etc.
+- `diamond_color` (text) : F / G / H
+- `certificate` (text) : GIA / IGI / aucun
+- `length_cm` (number) : 18
+- `weight_grams` (number) : 12
+- `needs_3d` (boolean) : true (déclencheur automation Meshy)
+- `needs_ai_shot` (boolean) : true (déclencheur automation Firefly)
+- `is_signature_piece` (boolean) : true pour l'ancre
+- `production_lead_time_days` (number) : 0 pour stock, 28 pour sur commande
+
+### 4.3 Structure SKU
+Format : `BR-[CAT]-[METAL]-[CARAT]-[N°]`
+Exemples :
+- `BR-BT-OB18K-5CT-001` (Bracelet Tennis Or Blanc 18k 5ct)
+- `BR-CO-OJ14K-PEND-007`
+- `BR-BG-OB18K-SOL-008`
 
 ---
 
-## PERSONNALISATION = ATTACHEMENT INSTANTANÉ
+## 5. TECH STACK & OUTILS
 
-| Personnalisation | Bijoux | Surcoût | Délai |
+### 5.1 Plateforme e-commerce
+- **Shopify Basic** — 39 €/mois HT. Upgrade vers **Advanced** (349 €/mois) dès que le CA mensuel dépasse 30 000 € (gain sur les frais de transaction).
+- **Thème** : **Dawn** (gratuit, officiel Shopify) pour le lancement. Upgrade vers **Impulse** (380 USD one-shot) quand premières 50 ventes.
+- **Domaine** : `bijou-r.com` chez OVH ou Cloudflare Registrar (15 €/an).
+- **Email pro** : Google Workspace 6 €/mois — `contact@bijou-r.com`, `hello@bijou-r.com`, `[prénom]@bijou-r.com`.
+
+### 5.2 Stack technique principal
+
+| Outil | Rôle | Coût | Phase |
 |---|---|---|---|
-| Gravure intérieure (15 car.) | Bagues, bracelets | Offerte | +3j |
-| Gravure extérieure | Médailles | +50 € | +5j |
-| Pierre de naissance | Colliers symboliques | Inclus | +2j |
-| Initiale pendentif | Colliers | Inclus | +2j |
-| Taille sur mesure | Bagues | Inclus | +7j |
-| Carte calligraphe | Toute commande >500 € | Offerte | +1j |
+| **Shopify Basic** | E-commerce | 39 €/mois | 1 |
+| **Cloudflare** | DNS, CDN, sécurité | 0 € | 1 |
+| **Google Workspace** | Emails pro | 6 €/mois | 1 |
+| **n8n self-hosted** | Automations | 3,50 €/mois (VPS Hetzner CX22) | 1 |
+| **Meshy AI Pro** | Modèles 3D depuis photos | 20 USD/mois (~18,50 €) | 1 |
+| **Klaviyo** | Email + SMS marketing | 0 € (<250 contacts) | 1 |
+| **ManyChat** | DM automation IG/FB | 0 € (Free tier) | 1 |
+| **Adobe Creative Cloud** | Firefly, Photoshop, Premiere, AE | déjà payé | 1 |
+| **Stability AI API** | Images IA via n8n | ~0,01 €/image | 1.5 |
+| **Anthropic Claude API** | Articles blog, captions IA | ~5-20 €/mois | 1.5 |
+| **Metricool** | Auto-scheduling IG/TikTok | 0 € (Free tier 50 posts) | 2 |
+| **Judge.me** | Avis clients | 15 USD/mois | 1 (Awesome) ou 2 |
+| **Shopify Inbox** | Chat client | 0 € | 1 |
 
-**Effet clé :** un bijou gravé ne se retourne pas. Taux de retour divisé par 4.
+**Total fixe Phase 1 (hors Adobe déjà payé) : ~78 €/mois.**
+
+### 5.3 Le VPS Hetzner — n8n self-hosted
+
+- **Pourquoi self-hosted** : n8n Cloud coûte 20-50 €/mois pour les volumes équivalents. Le VPS Hetzner CX22 (3,50 €/mois) tient largement.
+- **Spécs Hetzner CX22** :
+  - 2 vCPU, 4 Go RAM, 40 Go SSD
+  - Localisation : Falkenstein (DE) ou Helsinki (FI) — RGPD OK.
+- **Stack** : Ubuntu 22.04 LTS + Docker + Docker Compose + n8n latest + Caddy (reverse proxy SSL auto).
+- **URL n8n** : `n8n.bijou-r.com` (sous-domaine dédié).
+- **Auth** : basic auth + 2FA n8n natif.
+- **Backups** : snapshot Hetzner hebdo (1,40 €/mois) + dump SQLite n8n hebdo vers Google Drive via cron.
+
+### 5.4 Le pipeline 3D (Meshy AI + Shopify natif)
+
+- **Meshy AI Pro** : génération `.glb` depuis 4-8 photos d'un bijou (vues sous différents angles).
+- **Coût** : 20 USD/mois = 200 crédits = ~50 modèles 3D/mois.
+- **Workflow** :
+  1. Photos prises au studio (4-8 angles).
+  2. Upload Meshy (manuel ou via API + n8n).
+  3. Meshy génère `.glb` en 5-15 min.
+  4. Téléchargement et upload dans Shopify : Produits → [Produit] → Media → "Add 3D model".
+  5. Shopify affiche automatiquement le viewer 3D `<model-viewer>` sur la fiche, avec bouton "Voir en AR" sur iOS/Android.
+- **AUCUNE APP REQUISE** : Shopify a un viewer 3D natif depuis 2019.
+
+### 5.5 Le pipeline photos (Adobe Firefly + Stability AI)
+
+- **Pour les photos hero produit** : photos studio réelles → Photoshop Generative Fill → changement de fond (atelier, marbre, soie noire) → Generative Expand pour formats 9:16 (TikTok) / 1:1 (IG) / 16:9 (web).
+- **Pour les visuels de communication massifs** (posts IA quotidiens) : Stability AI API via n8n. Prompt type : *"Macro photography, [produit] on dark velvet, golden hour lighting, luxury jewelry aesthetic, shallow depth of field, hyperreal, 8k"*.
+- **Coût Stability** : ~0,01 €/image → 100 images/mois = 1 €.
+- **Pas besoin de Firefly Services API** (250 €/mois) au démarrage : Firefly dans Photoshop suffit pour le travail manuel des fiches produit.
+
+### 5.6 Apps Shopify essentielles
+
+| App | Rôle | Coût |
+|---|---|---|
+| **Shopify Inbox** | Chat client natif | 0 € |
+| **Shopify Email** | Premiers emails simples | 0 € (10k/mois) |
+| **Shopify Flow** | Automations natives | 0 € (toutes formules) |
+| **Judge.me Reviews** | Avis | 0 € (Free) ou 15 USD/mois (Awesome) |
+| **Klaviyo** | Marketing email/SMS | 0 € (<250) puis $20+/mois |
+| **Metricool** *(externe)* | Programmation IG/TikTok | 0 € (Free) ou 18 €/mois (Starter) |
+| **Vitals: All-in-One** *(optionnel)* | Wishlist, currency converter, etc. | 30 USD/mois |
+| **Shop Currency Converter** | EUR/ILS/USD auto | 0 € (intégré Shopify Markets) |
+
+> **Marchés multiples** : utiliser **Shopify Markets** (natif) pour EUR (France) + ILS (Israël) + USD (autres). Géolocalisation IP automatique.
 
 ---
 
-# PARTIE 3 — VIEWER 3D ET GÉNÉRATION AUTOMATIQUE
+## 6. AUTOMATIONS
 
-## VIEWER 3D NATIF SHOPIFY
-
-**Shopify supporte le 3D nativement** via `model-viewer` (Google). Il suffit d'uploader un `.glb` ou `.gltf` dans les médias produit.
-
-**Ce que le client voit :**
-- Rotation 360° libre (doigt sur mobile, souris sur desktop)
-- Pinch to zoom
-- Éclairage HDR automatique (reflets or et brillance pierres)
-- **Bouton "Voir en AR"** sur iOS (AR Quick Look) et Android (Scene Viewer)
-- Pour les bagues : voir la bague en réalité augmentée sur sa main réelle
-
-**Aucune app supplémentaire nécessaire** pour le rendu de base. Zakeke à ajouter si gravure live en 3D voulue.
-
----
-
-## MESHY AI — PIPELINE AUTOMATIQUE PHOTO → 3D
-
-**Meshy.ai** génère des modèles 3D `.glb` depuis des photos produit. Mode `surface_mode: "hard"` + PBR = reflets métalliques et brillance pierres bien rendus.
-
-**API Meshy :**
+### 6.1 Vue d'ensemble des workflows
 
 ```
-POST https://api.meshy.ai/v2/image-to-3d
-Headers: Authorization: Bearer {MESHY_API_KEY}
-Body: {
-  "image_url": "https://...(photo produit)",
-  "enable_pbr": true,
-  "surface_mode": "hard",
-  "topology": "quad",
-  "target_polycount": 30000
-}
-→ Retourne task_id
-
-GET https://api.meshy.ai/v2/image-to-3d/{task_id}
-→ Poll jusqu'à "succeeded" → model_urls.glb
+[Shopify webhook] ──► [n8n] ──► [Meshy / Firefly / Klaviyo / Slack]
+[Klaviyo events]  ──► [Klaviyo Flows internes]
+[Shopify Flow]    ──► [Tags, segmentation, notifications]
+[ManyChat]        ──► [Capture email] ──► [Klaviyo list]
+[n8n + Claude]    ──► [Articles blog auto] ──► [Shopify Articles API]
+[Airtable + Metricool] ──► [Auto-scheduling posts]
 ```
 
-**Prix :** ~20 $/mois Pro (~1 crédit par modèle).
+### 6.2 Workflows n8n
+
+#### Workflow 1 — Génération 3D auto (déclenchée à la création produit)
+- **Trigger** : Shopify webhook `products/create`.
+- **Filtre** : metafield `needs_3d = true`.
+- **Steps** :
+  1. Récupérer les 4 premières images du produit (`images[0..3]`).
+  2. POST API Meshy AI avec les URLs : `POST /v2/image-to-3d`.
+  3. Polling toutes les 60s sur `GET /v2/image-to-3d/{task_id}` jusqu'à `status: SUCCEEDED`.
+  4. Télécharger le `.glb`.
+  5. Upload du `.glb` sur Shopify via API GraphQL `productCreateMedia` (type: MODEL_3D).
+  6. Mettre à jour le metafield `needs_3d = false`.
+  7. Notification Slack/Email : "Modèle 3D ajouté à [Produit]".
+
+#### Workflow 2 — Photos IA (variations de fond)
+- **Trigger** : Shopify webhook `products/create` OR bouton manuel n8n.
+- **Filtre** : metafield `needs_ai_shot = true`.
+- **Steps** :
+  1. Récupérer image principale produit.
+  2. Pour 3 fonds différents (atelier, marbre, soie noire) :
+     - POST Stability AI `inpaint` ou ControlNet.
+     - Récupérer image générée.
+     - Upload en image secondaire produit.
+  3. Notif Slack avec preview.
+
+#### Workflow 3 — Articles blog automatique (Phase 1.5)
+- **Trigger** : Schedule 2x/semaine (mardi 9h, vendredi 9h).
+- **Steps** :
+  1. Lire ligne suivante d'un Airtable "Calendrier éditorial".
+  2. Appel Claude API (`claude-opus-4-7`) avec prompt structuré : titre, mots-clés, plan H2/H3, FAQ.
+  3. Récupérer réponse → markdown.
+  4. Conversion markdown → HTML (lib `marked`).
+  5. Génération image de couverture via Stability AI.
+  6. POST Shopify API `articles` (status: draft).
+  7. Notif email avec lien preview pour validation humaine avant publication.
+
+#### Workflow 4 — Sync avis Judge.me ↔ Klaviyo
+- **Trigger** : Webhook Judge.me `review/created` (note ≥ 4).
+- **Steps** :
+  1. Récupérer l'avis + email client.
+  2. POST Klaviyo : ajouter tag `happy-customer` + déclencher flow "Demande UGC" (offre un code 10% en échange d'une photo).
+
+#### Workflow 5 — Alerte stock bas
+- **Trigger** : Shopify webhook `inventory_levels/update`.
+- **Filtre** : `available < 3`.
+- **Steps** :
+  1. Notif Slack #stock.
+  2. Si `is_signature_piece = true` → email immédiat au fondateur.
+
+### 6.3 Klaviyo — Les 5 flows prioritaires
+
+#### Flow 1 — Welcome Series (4 emails, 7 jours)
+
+- **Trigger** : Ajout à la liste "Newsletter".
+- **Email 1 — J+0 (immédiat)** :
+  - Objet : *"Bienvenue chez Bijou-R. Voici ce qu'on fait, en 90 secondes."*
+  - Contenu : photo fondateur dans l'atelier + texte chaleureux + lien vidéo 90s + CTA "Voir nos 10 pièces".
+- **Email 2 — J+2** :
+  - Objet : *"Pourquoi 24 990 € pour un bracelet (et pourquoi 290 € pour un autre)"*
+  - Explication du prix-ancre, transparence.
+- **Email 3 — J+4** :
+  - Objet : *"On vous montre l'atelier (vidéo)"*
+  - Vidéo atelier + 5 piliers.
+- **Email 4 — J+7** :
+  - Objet : *"Un dernier mot. Et un code, peut-être."*
+  - Code WELCOME-50 (50 € sur 1ère commande > 500 €). Valable 14 jours.
+
+#### Flow 2 — Abandon panier (3 emails, 3 jours)
+
+- **Trigger** : Klaviyo `Started Checkout` → no `Placed Order` after delay.
+- **Email 1 — H+2** :
+  - Objet : *"On a gardé votre sélection."*
+  - Image du produit + bouton "Reprendre" (deep-link checkout).
+- **Email 2 — J+1** :
+  - Objet : *"Une question sur [Produit] ?"*
+  - Lien WhatsApp direct du fondateur + FAQ produit.
+- **Email 3 — J+3** :
+  - Objet : *"On l'a mis de côté encore 24h."*
+  - Léger sentiment d'urgence (rareté réelle, pas inventée) + CTA.
+  - **PAS DE CODE PROMO** sur abandon panier (préserve la valeur perçue).
+
+#### Flow 3 — Post-achat (5 emails, 60 jours)
+
+- **Trigger** : `Placed Order`.
+- **Email 1 — H+0** : *"Merci. Voici ce qui se passe maintenant."* (confirmation + délais)
+- **Email 2 — J+1** : *"Comment on prépare votre commande (photos atelier)"*
+- **Email 3 — J+2 (envoi confirmé)** : *"Elle est partie. Et voilà comment l'accueillir."* (guide entretien)
+- **Email 4 — J+14** : *"Une faveur ? 60 secondes de votre avis."* (Judge.me link)
+- **Email 5 — J+60** : *"Un autre coup de cœur ?"* (cross-sell basé sur catégorie achetée)
+
+#### Flow 4 — Win-back 60j d'inactivité
+
+- **Trigger** : `Last Active > 60 days`.
+- **Email 1** : *"Ça fait un moment. Voici ce qu'on a créé depuis."* (3 nouveautés)
+- **Email 2 (J+3 si pas de clic)** : *"Une dernière chose."* (code -10% valable 7j).
+- **Email 3 (J+10 si toujours rien)** : *"On va arrêter de vous écrire. Sauf si…"* (lien préférences fréquence).
+
+#### Flow 5 — Anniversaire
+
+- **Trigger** : champ `Birthday` rempli, J-7 du jour J.
+- **Email unique** : *"Joyeux anniversaire. Voici un cadeau qui n'est offert qu'aujourd'hui."* (code -15% valable 48h).
+
+### 6.4 Shopify Flow — Automations natives
+
+1. **Tag VIP** : si `customer.total_spent > 1000` → tag `VIP` → ajouter à segment Klaviyo `VIP`.
+2. **Tag needs-3d** : si nouveau produit créé avec balise `auto-3d` → metafield `needs_3d = true` → déclenche webhook n8n.
+3. **Tag needs-ai-shot** : si nouveau produit créé sans image secondaire → metafield `needs_ai_shot = true`.
+4. **Alerte stock signature** : si `is_signature_piece = true` ET stock < 2 → email fondateur.
+5. **Tag high-AOV** : si panier > 3000 € → notification fondateur (proposer suivi VIP perso).
+6. **Tag first-time-buyer** : si `customer.orders_count = 1` après checkout → ajouter à flow Post-achat segment "Nouveau client".
+
+### 6.5 ManyChat — Capture email via DM
+
+- **Trigger Instagram/Facebook** : commentaire contenant mot-clé `TENNIS` ou `BAGUE` sur n'importe quel post.
+- **Flow** :
+  1. DM auto : *"Salut [prénom] ! Voici le bracelet dont tu parles : [lien]. Tu veux que je t'envoie le guide tailles + un cadeau de bienvenue ?"*
+  2. Quick reply "Oui" → demande email.
+  3. Email saisi → push vers Klaviyo liste "DM Captures" → déclenche Welcome Series.
+  4. Quick reply "Voir la pièce" → lien direct fiche produit.
+
+### 6.6 Auto-scheduling posts (Phase 2)
+
+- **Stack** : Airtable (calendrier) + Metricool (poste).
+- Workflow n8n : prendre la prochaine ligne Airtable, générer le visuel (Stability) + caption (Claude), poster vers Metricool API → publication auto IG + TikTok aux heures programmées.
 
 ---
 
-## ADOBE FIREFLY API — PIPELINE PHOTOS AUTOMATIQUES
+## 7. PHASE 2 — MARKETING — À TRAITER PLUS TARD
 
-**Endpoints principaux :**
+> **Cette section est documentée mais NE SERA PAS EXÉCUTÉE tant que la Phase 1 (site + automations) n'est pas terminée et validée.**
 
-| Endpoint | Usage |
+### 7.1 Stratégie globale Phase 2
+
+- **Canal principal** : TikTok organique + Instagram Reels.
+- **Pourquoi pas les ads en priorité** : CPM bijouterie sur Meta = 25-40 €, sur TikTok = 8-15 €. Le coût d'acquisition payant est prohibitif tant qu'on n'a pas :
+  1. Des créatifs qui convertissent (validés en organique d'abord).
+  2. Un funnel email solide pour rentabiliser le 1er achat.
+- **Budget ads progressive** : 0 € mois 1-2 → 300 €/mois mois 3 (test) → 1 500 €/mois mois 4-6 si ROAS > 2.
+
+### 7.2 TikTok organique — Les 3 formats validés
+
+#### Format 1 — "Le choc de prix"
+- Hook (3s) : *"Pourquoi celui-là coûte 24 990 € ?"*
+- Plan macro du bracelet ancre.
+- Réponse en 30s : *"5 carats, F-VVS, GIA, édition de 12. Mais voilà celui que je vous recommande VRAIMENT…"*
+- Transition vers le 2 490 € (le héros).
+- CTA : *"Lien dans la bio."*
+
+#### Format 2 — "La révélation"
+- Hook : *"Mon grand-père bijoutier disait toujours : 'Si tu vois le prix d'une bague, c'est pas le bon endroit.' Voici pourquoi il avait tort."*
+- Le fondateur explique la différence entre marge boutique physique vs DTC.
+- Montrer le bijou en main.
+- CTA : *"Notre atelier. Notre prix. Lien en bio."*
+
+#### Format 3 — "Le contre-argument"
+- Hook : *"On me dit : 'Mais comment vous pouvez vendre un bracelet tennis 290 € s'il est en argent ?' Réponse en 45 secondes."*
+- Le fondateur défend la cohérence du catalogue.
+- Honnêteté radicale = trust.
+
+### 7.3 Posts IA quotidiens — Pipeline complet
+
+**Objectif** : 1 post IG + 1 post TikTok par jour, généré automatiquement.
+
+**Pipeline** :
+1. Airtable "Calendrier de posts" : 30 lignes/mois avec produit, angle, prompt visuel.
+2. n8n cron 6h du matin → lire la ligne du jour.
+3. Stability AI → générer visuel (prompt prédéfini par produit).
+4. Claude API → générer caption FR (160 caractères max, ton Bijou-R, hashtags).
+5. POST Metricool API → planifier publication 11h (IG) et 19h (TikTok).
+6. Notification email pour validation avant publication.
+
+### 7.4 Premiers posts — Plan des 7 premiers jours
+
+- **J+1 (lundi)** : Vidéo fondateur "Bienvenue chez Bijou-R" (60s).
+- **J+2** : Photo bracelet héros + caption "Notre bestseller, pour comprendre pourquoi."
+- **J+3** : Carrousel "Les 5 promesses Bijou-R" (5 slides texte).
+- **J+4** : Vidéo atelier 30s (plans serrés, ASMR sertissage).
+- **J+5** : Format "Choc de prix" (TikTok 1).
+- **J+6** : Photo ancre 24 990 € avec caption explicative.
+- **J+7** : Témoignage / FAQ vidéo : "On me demande souvent…"
+
+### 7.5 Premières pubs Meta/TikTok (mois 3, si traction)
+
+- **Budget test** : 10 €/jour pendant 14 jours = 140 €.
+- **Format** : 1 campagne "Conversions Achat", 3 ad sets (FR femmes 25-45, intérêts joaillerie), 3 créatifs (les 3 formats TikTok recyclés).
+- **Audiences** :
+  - Cold : intérêts "joaillerie", "Mejuri", "Messika".
+  - Warm : retargeting viewers vidéo 75% + visiteurs site 30j.
+- **Décision après 14j** :
+  - ROAS > 2 → scale 50 €/jour.
+  - ROAS 1-2 → optimiser créatifs.
+  - ROAS < 1 → pause et retour organique.
+
+### 7.6 Bios réseaux sociaux
+
+**Instagram** :
+```
+Bijou-R · Joaillerie d'atelier
+De 290 € à 24 990 €. Toujours vrai.
+Or 14k, 18k, diamants certifiés.
+Livraison FR + IL. Rachat 5 ans.
+↓ Notre dernière pièce
+```
+
+**TikTok** :
+```
+Le bracelet tennis. Réinventé.
+Atelier direct. Sans marge cachée.
+Livraison FR / IL.
+```
+
+### 7.7 Hashtags recommandés (à tester)
+- FR : #joaillerie #braceletennis #orjaune18k #bijouxFrance #bijouxfemme
+- Mix : #tennisbracelet #finejewelry #everydayjewelry #diamondbracelet
+
+---
+
+## 8. BUDGET RÉALISTE PHASE PAR PHASE
+
+### 8.1 Phase 1 — Mois 1 à 2 (Setup)
+
+| Poste | Coût mensuel | Coût one-shot |
+|---|---|---|
+| Shopify Basic | 39 € | — |
+| Domaine `.com` + `.fr` | ~3 € (lissé) | 30 €/an |
+| Google Workspace | 6 € | — |
+| VPS Hetzner CX22 + snapshots | 5 € | — |
+| Meshy AI Pro | 18,50 € | — |
+| Stability AI (volume bas) | ~2 € | — |
+| Claude API (test) | ~5 € | — |
+| Cloudflare | 0 € | — |
+| Klaviyo / ManyChat / Adobe / Metricool | 0 € (Adobe déjà payé) | — |
+| Dépôt INPI (classes 14+35) | — | 270 € |
+| Photos studio (lot 1, optionnel ext.) | — | 600 € |
+| **TOTAL Phase 1** | **~78 €/mois** | **~270-870 €** |
+
+### 8.2 Phase 2 — Mois 3 à 6 (Marketing actif)
+
+| Poste | Coût mensuel |
 |---|---|
-| `POST /v3/images/generate` | Visuel lifestyle depuis prompt texte |
-| `POST /v3/images/fill` | Mettre un fond luxe sur photo bijou |
-| `POST /v3/images/expand` | Packshot carré → bannière / story |
-| `POST /v3/images/generate-object-composite` | **Placer le bijou dans un décor IA** |
+| Tous frais Phase 1 | 78 € |
+| Klaviyo (passe payant) | ~25 € (1000 contacts) |
+| Judge.me Awesome | 14 € |
+| Metricool Starter | 18 € |
+| Thème Impulse (one-shot 380$) | — |
+| **Ads Meta + TikTok (test)** | **300 €** |
+| **TOTAL Phase 2** | **~435 €/mois** |
 
-**Auth :** OAuth Server-to-Server via Adobe Developer Console.
+### 8.3 Phase 3 — Mois 6+ (Scale)
 
----
+- Tous frais Phase 2 (~135 €/mois fixes).
+- Ads : 1 500 à 3 000 €/mois selon ROAS validé.
+- EUIPO (one-shot) : 900 €.
+- Shopify Advanced (si CA > 30k€/mois) : 349 €/mois (gain de 1% sur les frais).
+- Vidéaste freelance (1 jour/mois) : 600-1000 €.
 
-## PIPELINE AUTOMATION COMPLET (n8n)
-
-```
-Shopify webhook : products/create
-        │
-        ├──────────────────────────┐
-        ▼                          ▼
-[PHOTOS — Firefly]        [MODÈLE 3D — Meshy]
-        │                          │
-Adobe IMS → access_token  Meshy API image-to-3d
-        │                          │
-Upload photo → /storage   Poll toutes les 10s
-        │                          │
-generate-object-composite Download .glb
-(×4 variantes)                     │
-        │                 Shopify : upload media
-Download × 4              MODEL_3D type
-        │
-Cloudinary CDN
-        │
-Upload → Shopify images
-        │
-        └──────────── Slack : "Approuver ?" ──────────────┐
-                                                           │
-                                              [Bouton OUI] → push
-                                              [Bouton NON] → discard
-```
-
-**Durée totale :** 5-15 minutes par produit, 100% automatique.
-
-**Prompts Firefly :**
-
-```
-Bracelet tennis :
-"Sparkling diamond tennis bracelet on polished black marble,
-dramatic studio lighting, deep shadows, luxury jewelry editorial,
-Vogue style, 8k hyperrealistic"
-
-Bague solitaire :
-"Elegant diamond solitaire ring on female hand, natural sunlight,
-minimalist white background, Hasselblad H6D, 100mm macro,
-f/2.8 bokeh, premium jewelry photography"
-```
+**Le marketing n'est PAS budget initial.** Pas de 21 000 €/mois. La règle : on dépense en ads ce que la marge organique paie déjà.
 
 ---
 
-# PARTIE 4 — CONFIGURATEUR BAGUE PERSONNALISÉE
+## 9. CHECKLIST DE LANCEMENT
 
-## VISION
+### 9.1 Brand & légal
+- [ ] Dépôt INPI classes 14 + 35 envoyé
+- [ ] Logo finalisé en SVG/PNG/PDF (3 variantes)
+- [ ] Charte graphique 4 pages exportée
+- [ ] Mentions légales rédigées
+- [ ] CGV rédigées (avec clause garantie rachat)
+- [ ] Politique de confidentialité RGPD-conforme
+- [ ] Politique cookies + bandeau CookieBot ou natif
+- [ ] SIRET / micro-entreprise active
 
-Le configurateur est la **machine à conversion premium** de Bijou-R. Ticket moyen : 4 500-15 000 €.
+### 9.2 Domaine & emails
+- [ ] `bijou-r.com` acheté
+- [ ] `bijou-r.fr` acheté
+- [ ] DNS pointé vers Shopify (A record `23.227.38.65` + CNAME `shops.myshopify.com`)
+- [ ] Google Workspace configuré
+- [ ] `contact@bijou-r.com`, `hello@bijou-r.com`, `[prénom]@bijou-r.com` créés
+- [ ] SPF + DKIM + DMARC configurés (delivrabilité email)
 
-URL dédiée : `bijou-r.com/creer-ma-bague`
+### 9.3 Shopify
+- [ ] Thème Dawn installé et personnalisé
+- [ ] Devise : EUR primaire, ILS + USD via Markets
+- [ ] Langues : FR primaire, EN + HE via Translate & Adapt
+- [ ] Mode de paiement : Shopify Payments + PayPal + Apple Pay
+- [ ] Modes de livraison : France 0€ dès 300€, Israël tarif unique, monde sur devis
+- [ ] Politique retours 30 jours configurée
+- [ ] Notifications email transactionnelles personnalisées
+- [ ] Favicon + meta OpenGraph + apple-touch-icon
 
-Ce n'est pas juste un outil — c'est une expérience. Le client crée quelque chose d'unique et s'y attache avant même de l'avoir acheté.
+### 9.4 Pages
+- [ ] Homepage avec 11 sections
+- [ ] Notre histoire
+- [ ] L'atelier
+- [ ] Garantie rachat
+- [ ] Traçabilité
+- [ ] Livraison & retours
+- [ ] Guide tailles
+- [ ] Contact (formulaire + WhatsApp + email)
+- [ ] CGV / Mentions / Confidentialité / Cookies
+- [ ] Blog activé (1 article publié minimum)
 
----
+### 9.5 Produits
+- [ ] 10 produits créés avec descriptions copy émotionnel
+- [ ] Au minimum 4 photos par produit (hero + détail + porté + emballage)
+- [ ] Au minimum 1 modèle 3D par produit
+- [ ] Tous les metafields renseignés
+- [ ] SKUs cohérents
+- [ ] Prix vérifiés (FR + IL + USD)
+- [ ] Stock initial saisi
+- [ ] Collections créées : Bracelets / Colliers / Bagues / Boucles / Sets
 
-## PAGE D'ENTRÉE DU TUNNEL
+### 9.6 Automations
+- [ ] VPS Hetzner provisionné
+- [ ] n8n self-hosted accessible sur `n8n.bijou-r.com`
+- [ ] Workflow Meshy 3D opérationnel et testé
+- [ ] Workflow Photos IA testé
+- [ ] Klaviyo Welcome Series active
+- [ ] Klaviyo Abandon Panier actif
+- [ ] Klaviyo Post-Achat actif
+- [ ] Shopify Flow VIP tag actif
+- [ ] Shopify Flow alerte stock actif
+- [ ] ManyChat keyword TENNIS actif
 
-```
-[Vidéo fullscreen : main qui dessine une bague à l'encre,
-fade vers une bague réelle qui apparaît]
+### 9.7 Tracking & Analytics
+- [ ] Google Analytics 4 installé via Shopify Customer Events
+- [ ] Meta Pixel installé
+- [ ] TikTok Pixel installé (Phase 2)
+- [ ] Google Search Console vérifié
+- [ ] Bing Webmaster Tools vérifié
+- [ ] Sitemap.xml soumis
+- [ ] Robots.txt vérifié
 
-"Créez la bague qu'aucune autre femme ne possède."
-"En 8 étapes. En 5 minutes. Pour la vie."
+### 9.8 Tests
+- [ ] Test commande complet (FR, IL, payment, refund)
+- [ ] Test abandon panier → flow déclenché
+- [ ] Test 3D viewer + AR sur iPhone et Android
+- [ ] Test responsive mobile (iPhone SE → iPhone 15 Pro Max)
+- [ ] Test responsive tablette
+- [ ] Test toutes pages chargement < 2.5s (PageSpeed > 80)
+- [ ] Test accessibilité (contrastes, alt text, focus)
+- [ ] Test cross-browser (Chrome, Safari, Firefox, Edge)
 
-[CTA principal]
-"Commencer ma création →"
-
-[CTA secondaire]
-"Voir les bagues déjà créées" (galerie inspiration)
-
-[Trust badges]
-✓ Diamants certifiés GIA & IGI
-✓ Atelier français — sertissage main
-✓ Livraison sécurisée 21 jours
-✓ Garantie à vie + assurance perte
-✓ Visioconférence avec un expert gratuite
-```
-
----
-
-## LES 8 ÉTAPES DU TUNNEL
-
-### ÉTAPE 1 — L'occasion (segmentation émotionnelle)
-
-```
-"Cette bague, c'est pour quelle occasion ?"
-
-[6 cartes visuelles cliquables]
-💍 Demande en mariage
-💎 Alliance de mariage
-🎁 Cadeau pour elle
-💖 Cadeau pour moi (self-love)
-🎉 Célébrer un événement
-✨ Just because
-```
-
-*Note : cette étape segmente le tunnel — "Demande en mariage" → on insiste sur l'émotion, écrin spécial, service vidéaste.*
-
----
-
-### ÉTAPE 2 — Style de monture
-
-```
-[Grille 6 styles avec viewer 3D miniature qui tourne]
-• Solitaire classique
-• Solitaire avec pavé
-• Trilogie
-• Halo
-• Toi & Moi
-• Vintage / Art Déco
-
-[Prix indicatif à droite, mis à jour en temps réel]
-"À partir de 2 400 €"
-```
-
----
-
-### ÉTAPE 3 — Métal
-
-```
-[4 options en macro]
-• Or jaune 18 carats (+0€)
-• Or rose 18 carats (+0€)
-• Or blanc 18 carats (+0€)
-• Platine 950 (+800€)
-
-[Pour chaque, texte émotionnel]
-"Or rose — Chaleureux, contemporain, parfait pour les peaux claires"
-"Platine 950 — Le métal noble, le plus résistant, choisi par
-les grandes maisons de joaillerie (+800€)"
-
-[Viewer 3D live : la monture choisie s'affiche dans le métal choisi]
-```
-
----
-
-### ÉTAPE 4 — Forme du diamant
-
-```
-[Grille 8 formes avec rendu 3D]
-• Rond (Brillant) — le plus brillant
-• Princesse — carré moderne
-• Coussin — vintage romantique
-• Ovale — allonge le doigt
-• Émeraude — élégance Art Déco
-• Poire — signature personnelle
-• Marquise — drame & singularité
-• Cœur — audace pure
-```
+### 9.9 Phase 2 — Pré-marketing (à faire APRÈS Phase 1)
+- [ ] Compte Instagram `@bijou.r` (ou variante)
+- [ ] Compte TikTok `@bijou.r`
+- [ ] Compte Facebook (page business)
+- [ ] Bios écrites et publiées
+- [ ] 9 premiers posts Instagram programmés
+- [ ] 7 premiers posts TikTok prêts (mais pas encore postés)
+- [ ] ManyChat connecté à Instagram
+- [ ] Klaviyo SMS activé (numéro court FR + IL)
 
 ---
 
-### ÉTAPE 5 — Origine du diamant (CHOIX CLÉ)
+## 10. ANNEXES — RÉFÉRENCES & INSPIRATIONS
 
-```
-[Deux cartes côte à côte]
+### 10.1 Sites à observer
+- **Messika.com** : storytelling luxe FR, parallaxe vidéo, hero plein écran.
+- **Mejuri.com** : émotion DTC, self-love, UGC, quiz de personnalisation.
+- **James Allen** : configurateur diamant + vidéo 360° par pierre.
+- **Brilliant Earth** : tunnel fiançailles, traçabilité éthique, RJC.
+- **Vrai.com** : transparence lab diamonds, prix juste.
+- **Maison Vever** : héritage parisien, photographies art.
 
-🌍 DIAMANT NATUREL              💎 DIAMANT DE LABORATOIRE
-Formé il y a 3 milliards         Créé dans nos labs partenaires
-d'années                         français
-Rareté absolue                   Chimiquement identique
-Investissement & transmission    40-60% moins cher
-Certificat GIA                   Certificat IGI
-À partir de 4 800 €/carat        À partir de 1 900 €/carat
+> **À demander au fondateur** : le site de référence précis qu'il veut imiter en priorité. Ce choix oriente le ton du thème et des hero sections.
 
-[Lien] "Comprendre la différence →" (modal éducatif)
-```
+### 10.2 Comptes IG/TikTok à étudier
+- @mejuri · @brilliantearth · @messika · @vraidesign · @missoma
+- TikTok : #jewelrytok #tennisbracelet #finejewelry
 
----
+### 10.3 Sources fournisseurs (recherche)
+- **Or & diamants Israël** : Bourse du Diamant de Ramat Gan (Israel Diamond Exchange).
+- **Sertissage France** : ateliers du Marais (Paris 3e) ou Lyon.
+- **Coffrets** : Pochette du Marais (Paris), Pakeve (luxe).
+- **Certificats** : IGI Anvers (rapide, ~80 €/pierre), GIA Carlsbad (premium, ~150 €).
 
-### ÉTAPE 6 — Caractéristiques 4C
-
-**6A — Carats :**
-```
-[Slider visuel 0.3ct → 5ct — la bague grossit visuellement]
-[Prix mis à jour en live à chaque mouvement du slider]
-[Tip] "1 carat = taille moyenne, choix le plus populaire"
-```
-
-**6B — Couleur :**
-```
-[Slider D → K avec dégradé visuel]
-[Reco IA] "Pour 1 carat, F-G est imperceptible à l'œil, économise 1 200€"
-```
-
-**6C — Pureté :**
-```
-[Slider FL → SI2]
-[Reco IA] "VS1-VS2 : aucune inclusion visible à l'œil nu"
-```
-
-**6D — Catalogue diamants réels :**
-```
-[MODE 1] "Je veux choisir le diamant exact"
-→ Catalogue de diamants EN STOCK avec :
-  - Vidéo 360° HD du diamant réel
-  - Photos plan rapproché
-  - Certificat GIA/IGI PDF téléchargeable
-  - Prix exact
-  (Style James Allen)
-
-[MODE 2] "Je laisse Bijou-R choisir"
-→ "Nos gemmologues sélectionnent le diamant avec le meilleur
-   rapport qualité/lumière du stock selon vos critères."
-```
+### 10.4 Outils utiles non listés
+- **Canva Pro** (gratuit avec Adobe) — utilisation marginale, Adobe suffit.
+- **Notion** — base de données fournisseurs, calendrier éditorial.
+- **Loom** — vidéos rapides pour SAV personnalisé.
+- **Calendly** — RDV essayage VIP (Phase 2).
 
 ---
 
-### ÉTAPE 7 — Détails finaux
-
-```
-[Sélecteur taille] + lien "Comment connaître ma taille ?"
-[Baguier gratuit] → commande un baguier papier envoyé à domicile
-
-[Gravure intérieure — offerte]
-Champ 15 caractères + preview en temps réel sur le 3D
-"Une date, des initiales, un secret..."
-
-[Options]
-• Pierres latérales / pavé sur l'anneau (+X€)
-• Écrin spécial "Demande en mariage" (+89€)
-• 🎬 Service "Vidéaste pour la demande" (+1 200€)
-  ← DIFFÉRENCIANT ABSOLU — aucun concurrent ne le propose
-```
-
----
-
-### ÉTAPE 8 — Récap & Achat
-
-```
-[À gauche : Viewer 3D fullscreen — rotation auto + AR]
-
-[À droite : Récap]
-"VOTRE BAGUE UNIQUE AU MONDE"
-
-✓ Solitaire halo — Or rose 18ct
-✓ Diamant naturel ovale 1.2ct — F/VS1 — GIA n°2186524835
-✓ Pavé latéral 0.18ct
-✓ Taille 53 — Gravure "S & D — 14.06.26"
-✓ Écrin demande en mariage
-
-[Prix total]  7 480 €
-              ou 4× 1 870€ sans frais (Alma)
-
-[Comparatif affiché]
-"Tiffany : env. 12 500€ | Cartier : env. 14 200€"
-
-[3 CTAs]
-🟡 "Je commande ma bague →"
-🔵 "Parler à un expert (visio gratuite)"
-⚪ "Sauvegarder ma création"
-
-[Réassurances finales]
-✓ Livraison sécurisée 21j FedEx assuré
-✓ Garantie à vie — SAV à vie
-✓ Assurance perte/vol 1ère année offerte
-✓ Modification possible dans les 48h
-✓ Retour 30j — remboursement intégral
-```
-
----
-
-## UX ÉMOTIONNEL DU CONFIGURATEUR
-
-| Principe | Application |
-|---|---|
-| **Progress bar émotionnelle** | "Vous êtes à 60% de votre création unique" + barre dorée |
-| **Jamais de page-load** | Transitions fluides 300-500ms entre étapes |
-| **Viewer 3D toujours visible** | La bague évolue à chaque choix |
-| **Prix dynamique** | Affiché en haut, anime à chaque clic |
-| **Encouragements** | "Magnifique choix" / "Cette monture est notre best-seller" |
-| **Sauvegarde auto** | Email envoyé avec lien de reprise (Klaviyo) |
-| **Aide contextuelle** | Bouton "?" sur chaque champ + chat Gorgias |
-
----
-
-## GAMIFICATION DU PRIX
-
-```
-Étape 2 — monture solitaire         "À partir de 2 400 €"
-Étape 3 — platine                   "2 400 € → 3 200 € ✨"
-Étape 5 — diamant naturel           "3 200 € → +pierre"
-Étape 6 — 1.2ct F/VS1               "Diamant : +5 760 €"
-                                     ━━━━━━━━━━━━━━━━━━━
-                                     TOTAL : 7 480 €
-
-Sous le total :
-"Pour la même bague chez Tiffany : env. 12 500 €"
-"Chez Cartier : env. 14 200 €"
-```
-
----
-
-## IMPLÉMENTATION TECHNIQUE
-
-### Option A — Apps Shopify (rapide, budget limité)
-- **Zakeke 3D Customizer** (~$59-499/mois)
-- Limite : peu flexible pour le tunnel émotionnel précis voulu
-
-### Option B — Custom Liquid + Vue.js + Three.js ← RECOMMANDÉ
-- Page custom `/pages/creer-ma-bague`
-- Front : **Three.js** ou **Babylon.js** pour le viewer 3D
-- Tunnel : **Vue.js** ou **Alpine.js** dans le Liquid
-- Stock diamants : Airtable + n8n (sync temps réel)
-- Création produit final : Shopify Admin API crée un produit "custom" éphémère à la volée
-
-### Option C — Shopify Hydrogen (headless, React) ← Phase 2
-- Liberté totale UX, animations premium
-- Coût dev : 30-60k€ initial
-- À envisager à 100k€ de CA mensuel
-
----
-
-## STOCK DE DIAMANTS (Style James Allen)
-
-**Sources fournisseurs :**
-- **RapNet** (réseau mondial diamantaires, API disponible)
-- **IDEX** (alternative)
-- **VDB** (Virtual Diamond Boutique)
-- Pour les lab-grown : **WD Lab Grown**, **Diamond Foundry**
-
-**Champs de la base diamants (Airtable) :**
-
-| Champ | Source |
-|---|---|
-| N° certificat GIA/IGI | Fournisseur |
-| Forme / Carats / Couleur / Pureté | Certificat |
-| Taille (cut) / Polissage / Symétrie | Certificat |
-| Prix HT fournisseur | Fournisseur |
-| Prix vente Bijou-R | Calcul auto (markup ×2.5-3) |
-| URL vidéo 360° du diamant | Fournisseur |
-| URL PDF certificat | Fournisseur |
-| Disponible en stock | Boolean |
-
----
-
-## REDIRECTIONS VERS LE CONFIGURATEUR
-
-1. **Fiche produit bague** — bloc en bas :
-   > "Vous voulez quelque chose d'UNIQUE ? Créez VOTRE bague →"
-
-2. **Catégorie Bagues** — bannière :
-   > "Aucune bague ne vous correspond ? Composez la vôtre →"
-
-3. **Menu principal** — item dédié "Créer ma bague" en gras/doré
-
-4. **Popup contextuel** — si >2 min sur catégorie bagues sans clic :
-   > "Envie d'une bague qui n'existe nulle part ailleurs ?"
-
-5. **Homepage** — section dédiée avec la vidéo d'intro du configurateur
-
----
-
-# PARTIE 5 — APPLICATIONS SHOPIFY
-
-| App | Usage | Prix/mois |
-|---|---|---|
-| **Klaviyo** | Email + SMS automation | 0-45 € |
-| **Loox** | Avis avec photos UGC | ~10 € |
-| **Judge.me** | Avis + étoiles schema | Gratuit |
-| **Fomo** | Notifications sociales live | ~20 € |
-| **Searchanise** | Search avancée + filtres metafields | ~19 € |
-| **Tidio** | Chat live + bot | Gratuit |
-| **Hextom Shipping Bar** | Barre livraison offerte | Gratuit |
-| **Back in Stock** | Alerte réassort | ~20 € |
-| **Shopify Flow** | Automations natives | Gratuit (Advanced) |
-| **Gorgias** | SAV centralisé | ~60 € |
-| **ReConvert** | Upsell post-achat | ~5 € |
-| **Zakeke** | Viewer 3D + gravure live | ~50 € |
-| **Vitals** | SEO + popups + social proof | ~30 € |
-| **Bundler** | Sets + bundles | Gratuit |
-| **Stocky** | Gestion stock + prévisions | ~79 € |
-| **Triple Whale** | Dashboard analytics unifié | ~130 € |
-| **Metricool** | Scheduling réseaux sociaux | ~30 € |
-| **Rewind** | Backup Shopify quotidien | ~9 € |
-| **Intelligems** | A/B testing prix et contenu | ~99 € |
-| **Rebuy** | Recommandations IA cross-sell | ~99 € |
-| **Langify** | Traduction FR/HE/EN | ~20 € |
-
----
-
-# PARTIE 6 — AUTOMATIONS COMPLÈTES
-
-## KLAVIYO — 18 FLOWS
-
-| # | Flow | Déclencheur | Étapes | Objectif |
-|---|---|---|---|---|
-| 1 | **Welcome Series** | Subscribe form | E1 immédiat (BIENVENUE10) → J+1 storytelling → J+3 le Signature → J+5 avis → J+8 urgence | Convertir subs |
-| 2 | **Browse Abandonment** | Viewed Product 3× | E1 +4h → E2 +24h garantie | Récup intent |
-| 3 | **Cart Abandonment** | Checkout started | E1 +1h → E2 +24h social proof → SMS +48h → E3 +72h -10% | Récup panier |
-| 4 | **Checkout Abandonné** | Checkout démarré | E1 +30min → E2 +20h → E3 +44h | Hot leads |
-| 5 | **Post-Purchase** | Order placed | E1 immédiat → E2 +2j guide entretien → E3 +5j suivi | NPS + upsell |
-| 6 | **Order Shipped** | Fulfillment created | SMS + email tracking | Service |
-| 7 | **Delivery** | Order delivered | E1 +1j (comment porter) → E2 +7j (avis Loox) → E3 +14j (cross-sell) | Reviews + LTV |
-| 8 | **Win-Back 60j** | 60j sans achat | E1 nouveautés → E2 +5j -15% → E3 +10j last chance | Réactivation |
-| 9 | **Win-Back 180j** | 180j sans achat | E1 mood → E2 +7j -20% + free ship | Churn |
-| 10 | **Anniversaire achat** | 1 an après 1er achat | "Membre depuis 1 an" + exclusivité | Loyalty |
-| 11 | **Birthday** | Date anniversaire | -15% le jour J | Émotionnel |
-| 12 | **VIP Upgrade** | LTV > 1000 € | "Bienvenue au Cercle Diamant" + perks | Premium |
-| 13 | **Back in Stock** | Réassort produit | Email + SMS immédiat | Récup demande |
-| 14 | **Price Drop** | Produit wishliste baisse | Email | Récup wishlist |
-| 15 | **Cross-sell** | J+30/J+90 post-achat | Pièces complémentaires | Repeat rate |
-| 16 | **List Hygiene** | 120j sans engagement | E1 "On vous manque" → si no open : suppression | Délivrabilité |
-| 17 | **Review Request** | Livraison +10j | Loox + incentive 5€ | UGC |
-| 18 | **Configurateur Abandonné** | Étape 3+ sans finaliser | E1 "Votre bague vous attend" + lien reprise → E2 +48h expert | Récup configurateur |
-
----
-
-## SHOPIFY FLOW (Natif — Gratuit sur Advanced)
-
-- Tag "VIP" quand customer LTV > 1 000 €
-- Tag "needs-ai-shot" → déclenche pipeline Firefly
-- Tag "needs-3d" → déclenche pipeline Meshy AI
-- Notification Slack sur order > 500 €
-- Auto-hide product quand inventory = 0
-- Fraud risk > medium → hold fulfillment
-- Auto-cancel commande non payée > 24h
-- Tag "repeat" sur 2e achat
-- Auto gift-wrap si SKU `GIFT-BOX`
-
----
-
-## MANYCHAT — FLOWS INSTAGRAM & TIKTOK
-
-- **Keyword "PRIX"** → DM auto avec lien produit + code -10%
-- **Commentaire "info"** sous post → DM auto fiche produit
-- **DM welcome** pour nouveau follower → carrousel collection
-- **Lead magnet** : "Envoie GUIDE → reçois le guide bracelet tennis" → capture email → push Klaviyo
-- **Retargeting DM** : sync Klaviyo pour relancer en DM Insta les abandons panier
-- **TikTok flow** : équivalent via ManyChat TikTok (bêta)
-
----
-
-## N8N — AUTOMATIONS TECHNIQUES
-
-| Automation | Stack | Fréquence |
-|---|---|---|
-| Nouveau produit → 4 photos IA | webhook → n8n → Firefly → Slack → Shopify | event |
-| Nouveau produit → modèle 3D | webhook → n8n → Meshy → Shopify media | event |
-| Articles blog auto (Claude API) | Cron lun/jeu 9h → Claude → validation → Shopify Blog API | 2×/semaine |
-| Reporting CA quotidien | Triple Whale API → n8n → Slack → Notion | daily 8h |
-| Audit fiches produit faibles | GA4 + Shopify → Claude analyse → Slack reco | daily 7h |
-| Social media publish | Airtable → Metricool API | selon calendrier |
-| Stock < seuil → alerte | Stocky → Slack | hourly |
-| Backup Shopify | Rewind | daily |
-
----
-
-# PARTIE 7 — BLOG AEO / LE JOURNAL
-
-## ARCHITECTURE DU JOURNAL
-
-**URL :** `bijou-r.com/journal` (pas "blog" — "Journal" est plus premium)
-
-```
-/journal/
-├── /guides-achat/        → BOFU — intention d'achat forte
-├── /art-de-porter/       → MOFU — style et inspiration
-├── /comprendre/          → TOFU — éducation diamant, métaux
-├── /atelier/             → Brand — coulisses, artisans
-├── /histoires/           → Émotionnel — vraies histoires clientes
-└── /entretien/           → Post-achat — SEO long terme
-```
-
----
-
-## CALENDRIER ÉDITORIAL 12 MOIS
-
-| Mois | Thématique | Articles phares |
-|---|---|---|
-| Janvier | Self-love, résolutions | "Le bijou qui marque vos victoires" / "Pierre de naissance : grenat" |
-| Février | Saint-Valentin, fiançailles | "Cadeau Saint-Valentin 200-2000€" / "Demander en mariage en 2026" |
-| Mars | Printemps, grand-mères | "Le bijou transmis : pourquoi ça change tout" |
-| Avril | Mariages, communions | "Bijoux de mariée : alliance, parure, traditions" |
-| Mai | Fête des Mères | "Top cadeaux Fête des Mères selon le budget" |
-| Juin | Fiançailles été | "Bague de fiançailles : guide complet 2026" |
-| Juillet | Vacances, bijoux d'été | "Bijoux résistants à l'eau de mer" |
-| Août | Rentrée, bracelet tennis | "Le bracelet tennis : pourquoi tout le monde en veut" |
-| Septembre | Roch Hachana, Yom Kippour | "Bijoux pour les fêtes juives : la tradition" ← marché IL |
-| Octobre | TOFU éducation | Articles 4C diamant, guide couleur, guide pureté |
-| Novembre | Anti-Black Friday | "Pourquoi nous ne ferons jamais de Black Friday" |
-| Décembre | Noël, Hanoukka | "Cadeaux Hanoukka 2026" / "Bijoux de Noël" |
-
-**Rythme :** 2 articles/semaine = 104 articles/an.
-
----
-
-## STRUCTURE D'UN ARTICLE OPTIMISÉ AEO
-
-```markdown
-# [H1 = exactement la query cible]
-Ex: "Diamant naturel ou de laboratoire : que choisir en 2026 ?"
-
----
-## Réponse rapide (TL;DR — 4 lignes max)
-[Bloc encadré]
-"Le diamant de laboratoire est 40-60% moins cher que le naturel,
-chimiquement identique, et plus responsable. Le diamant naturel
-garde une valeur de revente supérieure et une rareté incomparable.
-Pour un bijou de tous les jours : lab. Pour une transmission : naturel."
-
----
-## Sommaire (cliquable)
-1. Les différences fondamentales
-2. Tableau comparatif
-3. Lequel choisir selon votre situation
-4. FAQ
-
-## [H2 — sous-question 1]
-Réponse complète en 3-5 lignes.
-
-## Tableau comparatif (essentiel pour AEO)
-| Critère | Diamant naturel | Diamant lab |
-|---|---|---|
-| Prix | ... | ... |
-
-## FAQ (avec schema JSON-LD FAQPage)
-Q1 : "Quel est le budget moyen pour une bague de fiançailles en 2026 ?"
-R1 : ...
-
-## Conclusion + CTA produit
-[Lien interne vers produit + configurateur]
-```
-
-**Éléments AEO obligatoires sur chaque article :**
-- ✅ Schema FAQPage (JSON-LD)
-- ✅ Schema Article + Author + Organization
-- ✅ TL;DR en haut (4 lignes max — cité directement par les IA)
-- ✅ Au moins 1 tableau comparatif
-- ✅ Données chiffrées sourcées (GIA, IGI, De Beers)
-- ✅ 3-5 liens internes par article
-- ✅ 1500-2500 mots
-- ✅ Mis à jour (date visible)
-
----
-
-## AUTOMATISATION PUBLICATION ARTICLES (Claude API + n8n)
-
-```
-[Cron : lundi 9h + jeudi 9h]
-        ↓
-[Airtable] Lire la prochaine ligne "Status: À produire"
-        ↓
-[Claude API - claude-opus-4]
-Prompt: "Tu es rédacteur SEO/AEO pour Bijou-R.
-Rédige un article de 1800-2200 mots sur [SUJET].
-TL;DR 4 lignes. 3 H2 min. 1 tableau comparatif.
-FAQ 5 questions (JSON-LD). 3 liens internes vers [PRODUITS].
-Livrable : JSON avec title, meta_description, tldr, body_html,
-faq_schema, tags."
-        ↓
-[Firefly API] Générer image cover (style macro luxe)
-        ↓
-[Quality check n8n] : longueur OK ? mots-clés présents ?
-        ↓
-[Slack] "Article prêt à valider" + [Bouton VALIDER] [MODIFIER]
-        ↓
-[Si VALIDER] Shopify Blog API → POST article
-        ↓
-[Klaviyo] Notifier segment "Abonnés Journal"
-        ↓
-[Airtable] Update status "Publié" + URL
-```
-
----
-
-## INTERLINKING STRATÉGIQUE
-
-**Règles :**
-1. Chaque article → 3 fiches produits minimum
-2. Chaque fiche produit → 1-2 articles dans "À lire aussi"
-3. Pages pillar : `bijou-r.com/journal/guides-achat/bague-fiancailles-guide-complet` linke 15 articles satellites
-
-**Exemple cluster "Bague de fiançailles" :**
-```
-PILLAR : /journal/guides-achat/bague-fiancailles-guide-complet
-    ↓
-    - /journal/comprendre/4c-diamant
-    - /journal/comprendre/diamant-naturel-vs-lab
-    - /journal/guides-achat/budget-bague-3000-5000
-    - /journal/atelier/sertissage-bague
-    - /products/bague-solitaire-...
-    - /pages/creer-ma-bague
-```
-
----
-
-# PARTIE 8 — SEO GOOGLE
-
-## STRUCTURE URL ET META
-
-- URLs : `bijou-r.com/bracelets/tennis-signature-or-blanc` (FR), `/he/...` (IL)
-- Titles : `{Nom} — {Métal} {Carats} | Bijou-R` (60 chars max)
-- Metas : `{Nom} en {métal}. Fabriqué en France, garantie à vie. Livraison offerte dès 150€.` (155 chars)
-
-## SCHEMA MARKUP PRODUIT
-
-```json
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Bracelet Tennis Signature Or Blanc 18 Carats",
-  "image": ["url1.jpg", "url2.jpg"],
-  "description": "...",
-  "sku": "BR-TENNIS-OB-18",
-  "brand": {"@type": "Brand", "name": "Bijou-R"},
-  "material": "Or blanc 18 carats",
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "EUR",
-    "price": "24990.00",
-    "availability": "https://schema.org/InStock"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127"
-  }
-}
-```
-
-## GOOGLE MERCHANT CENTER
-
-- Feed via app "Google & YouTube" Shopify (gratuit)
-- Custom labels : bestseller, haute marge, saison
-- Activer listings gratuits + Shopping ads
-
----
-
-# PARTIE 9 — GOOGLE ADS
-
-## STRUCTURE CAMPAGNES
-
-```
-Compte Google Ads Bijou-R
-│
-├── Brand Search "Bijou-R"              5€/j — défense marque
-├── Performance Max — Catalogue         50-150€/j — principal
-│   ├── Asset Group "Bracelets Tennis"
-│   ├── Asset Group "Colliers"
-│   ├── Asset Group "Bagues"
-│   └── Asset Group "Le Signature"
-├── Standard Shopping — Bestsellers     15-30€/j — contrôle CPC
-├── Search — Generic high-intent        20-40€/j
-│   ├── "bracelet tennis"
-│   ├── "collier diamant femme"
-│   └── "bague solitaire"
-├── Remarketing Display                 15€/j
-└── YouTube Awareness (mois 3+)
-```
-
-## BUDGETS
-
-| Mois | Budget total | ROAS objectif |
-|---|---|---|
-| M1 | 2 500 € | 2.5+ |
-| M2 | 4 000 € | 3.5+ |
-| M3 | 6 000-8 000 € | 4+ |
-| M6 | 12 000-20 000 € | 5+ |
-
-**Règle scaling :** ROAS > 3 sur 7j → +20% budget tous les 3 jours.
-
----
-
-# PARTIE 10 — META ADS
-
-## STRUCTURE CAMPAGNES
-
-```
-TOFU — Awareness (vidéo engagement)
-    Intérêts : Cartier, Messika, Tiffany, Van Cleef, Vogue Paris
-
-MOFU — Considération (View Content / ATC)
-    LAL 1% buyers + retargeting vidéo viewers 75%
-
-BOFU — Conversion (Advantage+ Shopping = cheval de bataille)
-    ASC main + retargeting ATC 30j + email list Klaviyo sync
-
-DPA — Catalogue dynamique (retargeting + cross-sell)
-```
-
-## CRÉATIFS QUI CONVERTISSENT
-
-Formats priorité :
-1. **Reels UGC** 9:16 — 15-30s — hook 2 premières secondes
-2. **Carousel** — "5 raisons" / "Avant-Après"
-3. **Photo statique** — fond noir épuré avec prix visible
-4. **Vidéo unboxing** premium
-5. **Vidéo atelier** behind-the-scenes
-
-Angles gagnants :
-- "Pourquoi ce bracelet coûte 2490€ (et pourquoi ça vaut le coup)"
-- "Garantie à vie : ce qu'aucune autre marque ne fait"
-- "Diamants certifiés GIA — voici notre certificat"
-- "Made in France — visite de notre atelier"
-- **L'Ancre à 24 990€** — crée le buzz, nourrit l'algo, pas pour convertir directement
-
-## BUDGETS META
-
-| Phase | FR/jour | IL/jour | Total/mois |
-|---|---|---|---|
-| M1 Test | 100 € | 50 € | ~4 500 € |
-| M2 Optim | 200 € | 100 € | ~9 000 € |
-| M3 Scale | 400 € | 150 € | ~16 500 € |
-| M6 | 1 000 € | 300 € | ~39 000 € |
-
----
-
-# PARTIE 11 — RÉSEAUX SOCIAUX
-
-## INSTAGRAM
-
-**Handle :** `@bijou.r` ou `@bijour_officiel`
-
-**Bio :**
-```
-✦ Bijoux qui durent
-💎 Or 18k & Diamants certifiés GIA
-🏛 Fabriqués en France · Garantie à vie
-📦 Livraison express 🔗 [lien boutique]
-```
-
-**Contenu :**
-| Format | Fréquence | Contenu |
-|---|---|---|
-| Reels | 4-5/semaine | Produit en mouvement, ASMR, unboxing, **démo viewer 3D** |
-| Carrousel | 2-3/semaine | "Comment porter X", "Guide tailles", "Avant/Après" |
-| Stories | Quotidien | Coulisses, sondages, nouveautés, urgence stock |
-| Live | 1/mois | Présentation collection, Q&A |
-
----
-
-## TIKTOK
-
-**Handle :** `@bijour_` ou `@bijourofficial`
-Activer **TikTok Shop** si disponible.
-
-**Formats gagnants :**
-| Type | Hook | Durée |
-|---|---|---|
-| Prix choc | "Ce bracelet coûte 24 990€..." | 15-30s |
-| ASMR bijoux | Son du bijou, brillance | 15s |
-| **Démo 3D viewer** | "Vous pouvez tourner le bijou avec votre doigt" | 20s |
-| Unboxing | Ouvrir le colis Bijou-R | 30-45s |
-
----
-
-## FACEBOOK
-
-**Statut : Secondaire.** Créer mais ne pas poster activement.
-Utilité unique : **Meta Ads** + catalogue produits synchronisé.
-
----
-
-# PARTIE 12 — L'AGILEUR
-
-**Ce qu'il faut avoir prêt avant son retour :**
-
-- [ ] 5-10 pièces sélectionnées pour tournage
-- [ ] Brief créatif écrit (ci-dessous)
-- [ ] Props : marbre blanc, velours noir, lumière dorée, boîtes kraft premium
-- [ ] Accès éditeur Instagram + TikTok
-- [ ] Liste de 20 hooks vidéo testés
-- [ ] Story de démo du viewer 3D à filmer
-
-**Brief créatif :**
-```
-MARQUE : Bijou-R
-TON : Confident, désirable, accessible mais premium
-NE PAS DIRE : "pas cher" / "discount" / "promo"
-DIRE : "prix direct" / "sans intermédiaire" / "qualité joaillier"
-ANGLES : Prix ancre / Choc visuel / Émotionnel / Démo 3D viewer wow
-CTA : "Lien en bio" / "Code [NOM] -10%"
-```
-
----
-
-# PARTIE 13 — AEO (RÉFÉRENCEMENT IA)
-
-## POURQUOI C'EST CRITIQUE EN 2026
-
-40% des recherches passent par des moteurs IA (ChatGPT Search, Perplexity, Google AI Overviews, Claude, Gemini). Une recherche "où acheter un bracelet tennis en France" donne 3-5 marques citées. **Être cité = exister. Hors citation = invisible.**
-
-## FICHIER llms.txt (à créer à la racine)
-
-```
-# Bijou-R
-> Maison de joaillerie française, bijoux en or 18 carats,
-  garantie à vie, fabrication France. Livraison FR/IL.
-
-## Collections
-- /bracelets/tennis : bracelets tennis or et diamants certifiés GIA
-- /colliers : colliers diamants et pierres précieuses
-- /bagues/solitaires : solitaires et alliances
-- /pages/creer-ma-bague : configurateur bague personnalisée
-
-## Pages clés
-- /la-maison : histoire de la marque
-- /atelier : certifications RJC et process
-- /journal/faq : questions fréquentes complètes
-```
-
-## TACTIQUES
-
-1. Présence sur **Reddit** (r/jewelry, r/femalefashionadvice) — crawlé massivement par les LLMs
-2. **Trustpilot** note >4.5 (très cité par Perplexity)
-3. **Listicles** "Top bijouteries françaises" — travailler les éditeurs
-4. Profils complets : Google Business, LinkedIn Company, Crunchbase
-5. **Wikipedia** dès notoriété suffisante
-6. Cohérence NAP sur 50+ annuaires
-7. Monitoring citations LLM via **Profound.so** ou **Peec.ai**
-
-**Plan 6 mois :**
-- M1 : llms.txt + schemas complets + 20 FAQs
-- M2 : 10 articles "réponses" + Trustpilot
-- M3 : Google Business + Wikipedia draft + 5 RP presse
-- M4-6 : 30 articles + 20 backlinks tier 1 + Reddit organic
-
----
-
-# PARTIE 14 — GUIDA (ASSISTANT IA INTERNE)
-
-## VISION
-
-Guida est l'associée numérique de Bijou-R. Elle analyse les données Shopify en continu, détecte les problèmes et opportunités, suggère des actions, et exécute certaines tâches automatiquement.
-
-**Ce que Guida surveille :**
-
-| KPI | Seuil alerte | Action |
-|---|---|---|
-| Conversion global | <2% sur 7j | Audit funnel + recommandations Claude |
-| AOV | -10% vs mois précédent | Check upsells |
-| Bounce rate homepage | >65% | Audit héro + copy |
-| ROAS pubs | <2 | Alerte + nouveaux créatifs Firefly |
-| Articles publiés | <2/semaine | Trigger rédaction Claude auto |
-| Stock diamants | <3 unités | Réappro alert |
-| Taux retour | >5% | Audit produits |
-
-## CHATBOT GUIDA CÔTÉ CLIENT
-
-**Personnalité (system prompt) :**
-```
-Tu es Guida, conseillère en joaillerie chez Bijou-R.
-Tu es chaleureuse, élégante, jamais commerciale.
-Tu connais la joaillerie comme une amie d'enfance qui a grandi
-dans un atelier parisien.
-Tu tutoies si le client tutoie. Tu poses 1 question à la fois.
-Tu n'inventes JAMAIS un produit inexistant.
-Tu rediriges vers un humain si la commande dépasse 5 000€.
-```
-
-**Stack :** ManyChat (front) + Claude API (intelligence) + Shopify API (catalogue)
-
----
-
-# PARTIE 15 — LANCEMENT PRODUIT
-
-## PRÉ-LANCEMENT (T-60 à T-1 jour)
-
-| Jour | Action |
-|---|---|
-| T-60 | Landing "coming soon" + email capture + countdown |
-| T-60 → T-30 | Meta Ads landing (CPL 1-3€) — objectif 5 000 leads |
-| T-45 | Teasers IG (zoom macro extrême sans révéler le produit) |
-| T-30 | Annonce nom + date |
-| T-21 | Brief presse + samples à 20 journalistes/influenceurs |
-| T-14 | 20 vidéos micro-influenceurs prêtes à publier |
-| T-7 | 3 emails warmup Klaviyo |
-| T-3 | Story "ouverture dans 3j" + démo 3D viewer |
-| T-1 | Email "demain 10h" + SMS VIP |
-
-## JOUR J — CHECKLIST COMPLÈTE
-
-**Tech (la veille soir) :**
-- [ ] Backup Shopify (Rewind)
-- [ ] Test checkout FR (EUR) + IL (ILS) — vrai paiement remboursé
-- [ ] Test viewer 3D sur iPhone + Android
-- [ ] Test Apple Pay, Alma, Klarna
-- [ ] Webhooks n8n actifs et testés
-- [ ] Meta Pixel + GA4 + TikTok Pixel validés (Tag Assistant)
-- [ ] Pages légales validées (avocat FR + IL)
-- [ ] Gorgias prêt + macros pré-écrites
-
-**Marketing (Jour J) :**
-- [ ] 10h00 — Email blast toute la base
-- [ ] 10h00 — Story + Reel + Post Instagram
-- [ ] 10h05 — Activation Meta Ads
-- [ ] 10h05 — Activation Google Ads
-- [ ] 10h30 — SMS VIP
-- [ ] 11h00 — Push 20 influenceurs coordonnés
-- [ ] 12h00 — LinkedIn post fondateur
-- [ ] 14h00 — Instagram Live behind-the-scenes
-- [ ] 20h00 — Story récap day 1
-
----
-
-# BUDGET MENSUEL (Phase de lancement)
-
-| Poste | €/mois |
-|---|---|
-| Shopify Advanced | 240 |
-| Apps (Klaviyo, Loox, Gorgias, Vitals, etc.) | 500 |
-| Adobe Firefly Services | 250 |
-| Meshy AI Pro (3D) | 25 |
-| n8n VPS Hetzner | 10 |
-| Claude API (articles auto) | Variable (~50-150) |
-| Airtable Team | 25 |
-| Cloudinary | 50 |
-| Triple Whale | 130 |
-| Metricool | 30 |
-| Stocky | 79 |
-| Retouche photo manuelle (complément) | 800 |
-| Meta Ads | 9 000 |
-| Google Ads | 4 000 |
-| TikTok Ads | 1 500 |
-| Influenceurs / UGC | 3 000 |
-| RP presse | 1 500 |
-| **TOTAL** | **~21 000-22 000 €/mois** |
-
----
-
-# SITES DE RÉFÉRENCE
-
-| Site | Ce qu'on reprend |
-|---|---|
-| **Messika.com** | Élégance visuelle, typographie, storytelling designer, vidéo parallaxe |
-| **Mejuri.com** | Chaleur émotionnelle, copy self-love, UGC massif, quiz d'entrée, mobile-first |
-| **James Allen** | Configurateur diamants, vidéo 360° du diamant réel, filtres 4C, PDF certificat |
-| **Brilliant Earth** | Traçabilité, histoires clients, étapes configurateur claires |
-| **Vrai.com** | Transparence prix, DTC assumé, esthétique épurée |
-| **Bijou-R unique** | **AR sur main réelle + marché IL natif + service vidéaste demande en mariage + automation IA totale** |
-
----
-
-# ROADMAP 90 JOURS
-
-| Semaine | Focus |
-|---|---|
-| S1-2 | Domaine + mails + Shopify setup + thème + pages + Pixel |
-| S2-3 | Produits + metafields + fiches émotionnelles + pipeline Firefly + Meshy |
-| S3-4 | Klaviyo 18 flows + schemas JSON-LD + sitemap GSC |
-| S5 | Landing pré-lancement + Meta Ads warmup |
-| S6 | Influenceurs + presse + UGC tournés avec l'agileur |
-| S7 | ManyChat + Gorgias + n8n blog auto |
-| S8 | Prototype configurateur étapes 1-4 + Three.js viewer |
-| S9 | Pré-lancement actif (email capture objectif 5k leads) |
-| S10 | Soft launch VIP 48h |
-| **S11** | **LAUNCH DAY** |
-| S12 | Optim, scaling, premiers reviews |
-| M4+ | Configurateur full + blog AEO + Google Ads scale |
-
----
-
-*Bijou-R — Plan Stratégique Complet v3 — 20/05/2026*
-*Réflexion Opus — Ne rien mettre en oeuvre sans avoir lu en entier.*
+## FIN DU PLAN STRATÉGIQUE
+
+> Pour l'exécution opérationnelle pas-à-pas (création de l'email, achat du domaine, configuration Shopify, etc.), se reporter au document compagnon `GUIDE_EXECUTION_PAS_A_PAS.txt`.
+>
+> Le plan stratégique ci-dessus est le **QUOI** et le **POURQUOI**.
+> Le guide d'exécution est le **COMMENT**, dans l'ordre, sans aucune étape sautée.
