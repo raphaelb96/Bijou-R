@@ -1,0 +1,1213 @@
+================================================================================
+BIJOU-R — GUIDE D'EXÉCUTION PAS À PAS
+"Je te tiens la main à chaque étape"
+Rédigé le 20/05/2026
+================================================================================
+
+Ce guide est ton compagnon quotidien. Tu l'ouvres le matin, tu suis les étapes
+dans l'ordre. Chaque étape a un nom, une durée, un résultat attendu.
+Rien n'est laissé au hasard. Tu n'as qu'à exécuter.
+
+================================================================================
+PHASE 0 — AVANT DE TOUT FAIRE (1 heure)
+================================================================================
+
+ÉTAPE 0.1 — Lis le fichier PLAN_COMPLET_BIJOUR.md en entier
+────────────────────────────────────────────────────────────
+Durée : 45 minutes
+Action : lis tout, une fois, sans sauter.
+Résultat attendu : tu as la vision globale en tête.
+Tu sais où tu vas avant de commencer.
+
+ÉTAPE 0.2 — Envoie le site de référence
+────────────────────────────────────────
+Durée : 2 minutes
+Action : envoie le lien du site dont tu veux t'inspirer.
+Sans ce lien, on travaille sur les meilleurs sites du marché
+(Messika, Mejuri, James Allen) mais avec ton site c'est encore mieux.
+
+ÉTAPE 0.3 — Décide du marché principal
+────────────────────────────────────────
+Durée : 5 minutes
+Question à te poser : tu vises d'abord la France, ou Israël, ou les deux ?
+→ Si France : devise EUR, Alma pour le 3x, Colissimo + DHL
+→ Si Israël : devise ILS, Bit + Tranzila pour le paiement, DHL Express
+→ Si les deux : Shopify Markets depuis le début (cf Partie 1 du plan)
+Note ta réponse quelque part. Ça influencera le thème, la langue, les pubs.
+
+
+================================================================================
+PHASE 1 — DOMAINE ET EMAILS (Jour 1 — 2 heures)
+================================================================================
+
+ÉTAPE 1.1 — Acheter le domaine bijou-r.com
+───────────────────────────────────────────
+Durée : 15 minutes
+Où : va sur namecheap.com
+Comment :
+  1. Cherche "bijou-r.com" dans la barre de recherche
+  2. S'il est disponible, ajoute au panier
+  3. Achète aussi "bijou-r.fr" et "bijou-r.co.il" si disponibles (~10$/an chacun)
+  4. Paye avec carte ou PayPal
+  5. Active "WhoisGuard" (protection vie privée) — gratuit chez Namecheap
+Résultat attendu : tu reçois un email de confirmation. Tu as le domaine.
+
+REMARQUE : si bijou-r.com est pris, essaie bijour.com ou bijou-r.co.
+Préviens avant de choisir une alternative.
+
+ÉTAPE 1.2 — Créer les emails pro
+──────────────────────────────────
+Durée : 30 minutes
+Où : workspace.google.com
+Comment :
+  1. Clique "Commencer" → choisir le plan "Business Starter" (6$/mois/user)
+  2. Entre "bijou-r.com" comme domaine
+  3. Vérifie le domaine chez Namecheap (copier-coller les enregistrements DNS
+     que Google te donne dans le panneau Namecheap → "Advanced DNS")
+  4. Crée ces 4 adresses :
+     - hello@bijou-r.com
+     - commandes@bijou-r.com
+     - support@bijou-r.com
+     - pro@bijou-r.com
+  5. Teste en t'envoyant un email depuis chaque adresse
+Résultat attendu : 4 boîtes mail pro fonctionnelles.
+
+
+================================================================================
+PHASE 2 — SHOPIFY (Jour 2-3 — environ 8 heures)
+================================================================================
+
+ÉTAPE 2.1 — Ouvrir la boutique Shopify
+────────────────────────────────────────
+Durée : 20 minutes
+Où : shopify.com
+Comment :
+  1. Clique "Démarrer l'essai gratuit"
+  2. Nom de boutique : "Bijou-R"
+  3. Email : hello@bijou-r.com
+  4. Remplis le questionnaire (type de produit : bijoux / accessoires)
+  5. Plan : choisis "Advanced" (240€/mois) — ne prends pas Basic,
+     tu as besoin de Shopify Flow et du multi-marché
+Résultat attendu : ta boutique est créée, tu arrives sur le dashboard.
+
+ÉTAPE 2.2 — Connecter le domaine
+──────────────────────────────────
+Durée : 20 minutes
+Où : Shopify → Paramètres → Domaines
+Comment :
+  1. Clique "Connecter un domaine existant"
+  2. Suis les instructions pour modifier les DNS chez Namecheap
+  3. Attends 10-30 minutes pour la propagation DNS
+  4. Vérifie que "bijou-r.com" apparaît en vert dans Shopify
+Résultat attendu : ton domaine pointe vers ta boutique.
+
+ÉTAPE 2.3 — Acheter et installer le thème
+──────────────────────────────────────────
+Durée : 30 minutes
+Où : Shopify Theme Store
+Thème recommandé :
+  → "Impulse" de Archetype Themes (380$) — le meilleur pour la bijouterie
+  → Ou "Prestige" de Maestrooo (320$) si tu veux plus classique
+
+  Si budget serré pour l'instant : Dawn (gratuit) pour commencer,
+  tu migres vers Impulse quand les premières ventes arrivent.
+
+Après installation :
+  1. Palette couleurs :
+     - Couleur principale : #C9A961 (or champagne)
+     - Fond : #FAF7F2 (blanc cassé)
+     - Texte : #0A0A0A (noir profond)
+     - Accent : #C9A961
+  2. Polices :
+     - Titres : Cormorant Garamond (disponible dans Shopify)
+     - Corps : Inter
+  3. Logo : si tu n'en as pas, utilise un texte stylisé "Bijou-R" en
+     Cormorant Garamond pour l'instant
+Résultat attendu : boutique avec couleurs et polices en place.
+
+ÉTAPE 2.4 — Configurer les informations de base
+──────────────────────────────────────────────────
+Durée : 20 minutes
+Où : Shopify → Paramètres → Général
+À remplir :
+  - Nom de boutique : Bijou-R
+  - Email de contact : hello@bijou-r.com
+  - Adresse de l'entreprise (nécessaire pour les factures)
+  - Fuseau horaire : Paris OU Jerusalem selon marché principal
+  - Devise : EUR (ou ILS pour Israël)
+Résultat attendu : les infos de base sont complètes.
+
+ÉTAPE 2.5 — Configurer les paiements
+──────────────────────────────────────
+Durée : 45 minutes
+Où : Shopify → Paramètres → Paiements
+
+Dans l'ordre :
+  1. Shopify Payments (si en France) → donne tes infos bancaires
+  2. PayPal Express → connecte ton compte PayPal pro
+  3. Alma (paiement 3x/4x) → va sur getalma.eu, crée un compte marchand,
+     installe l'app Shopify depuis l'App Store Shopify
+  4. Klarna → similaire, klarna.com/merchants
+  5. Pour Israël : Stripe → crée un compte sur stripe.com,
+     connecte via Shopify → Paiements → Fournisseurs tiers
+
+IMPORTANT : teste TOUS les paiements avec une vraie commande test
+(remboursée après) avant le lancement.
+Résultat attendu : au moins 3 modes de paiement actifs.
+
+ÉTAPE 2.6 — Créer les metafields produits
+──────────────────────────────────────────
+Durée : 30 minutes
+Où : Shopify → Paramètres → Métachamps personnalisés → Produits
+
+Crée ces champs un par un :
+  Namespace : bijour
+  - Champ "materiau" → Type : Texte court
+  - Champ "carats_or" → Type : Nombre entier
+  - Champ "pierre_principale" → Type : Texte court
+  - Champ "carat_pierre" → Type : Nombre décimal
+  - Champ "purete_diamant" → Type : Texte court
+  - Champ "couleur_diamant" → Type : Texte court
+  - Champ "certification" → Type : Fichier
+  - Champ "poids_grammes" → Type : Nombre décimal
+  - Champ "origine" → Type : Texte court
+  - Champ "delai_fabrication" → Type : Nombre entier
+  - Champ "modele_3d" → Type : Fichier (auto-rempli par pipeline Meshy)
+  - Champ "story" → Type : Texte multiligne
+Résultat attendu : 12 metafields créés, ils apparaissent sur les fiches produit.
+
+ÉTAPE 2.7 — Créer les pages essentielles
+──────────────────────────────────────────
+Durée : 3-4 heures (à étaler sur 2 jours)
+Où : Shopify → Contenu en ligne → Pages
+
+Créer dans cet ordre (les plus importantes d'abord) :
+  1. /pages/livraison-retours
+     Contenu minimum :
+     - FR : livraison offerte dès 150€, délai 48h, transporteur Colissimo/DHL
+     - IL : DHL Express 3-5 jours ouvrés, tarif affiché
+     - Retours : 30 jours, gratuit, remboursement sous 5j
+     - Contact SAV : support@bijou-r.com + WhatsApp
+
+  2. /pages/garantie-vie
+     Contenu :
+     - Ce qui est couvert : sertissage, finitions, fermeture
+     - Ce qui n'est pas couvert : perte, vol, choc fort
+     - Comment activer : formulaire ou email
+     - Formulaire de demande de réparation
+
+  3. /pages/a-propos
+     Contenu :
+     - Histoire de la marque (2-3 paragraphes émotionnels)
+     - "Pourquoi Bijou-R existe" (raison d'être)
+     - L'atelier, le processus
+     - La promesse
+
+  4. /pages/faq
+     Au moins 20 questions avec réponses.
+     Catégories à couvrir :
+     → Commande : "Comment puis-je modifier ma commande ?"
+     → Livraison : "Combien de temps pour recevoir ma commande ?"
+     → Produits : "L'or 18 carats est-il résistant ?"
+     → Tailles : "Comment connaître ma taille de bague ?"
+     → Garantie : "Que couvre la garantie à vie ?"
+     → Retours : "Puis-je retourner un bijou gravé ?"
+     → Paiement : "Puis-je payer en 3 fois ?"
+     → Diamants : "Vos diamants sont-ils certifiés GIA ?"
+
+  5. /pages/guide-tailles
+     - Tableau tailles bagues (numéro FR / mesure mm / équivalent US/UK)
+     - Tableau tailles bracelets (longueur en cm)
+     - Tailles chaînes (40/42/45/50 cm)
+     - Instructions pour mesurer son doigt à la maison
+     - Mention "En cas de doute, prendre la taille au-dessus"
+
+  6. /pages/contact
+     - Formulaire de contact natif Shopify
+     - Email : hello@bijou-r.com
+     - WhatsApp (numéro avec lien wa.me)
+     - Horaires de réponse : lun-ven 9h-18h
+
+  7. Pages légales (générateur Shopify) :
+     - /pages/politique-confidentialite
+     - /pages/cgv
+     - /pages/mentions-legales
+     - /pages/politique-retours
+     - /pages/politique-cookies
+
+Résultat attendu : toutes les pages légales et pratiques créées.
+
+
+================================================================================
+PHASE 3 — PRODUITS (Jour 3-7 — environ 12 heures)
+================================================================================
+
+ÉTAPE 3.1 — Créer les collections
+───────────────────────────────────
+Durée : 30 minutes
+Où : Shopify → Catalogue → Collections
+
+Créer ces collections (dans l'ordre du menu) :
+  - "Bracelets Tennis" → /collections/bracelets-tennis
+  - "Bracelets Chaînes" → /collections/bracelets-chaines
+  - "Colliers" → /collections/colliers
+  - "Bagues" → /collections/bagues
+  - "Boucles d'oreilles" → /collections/boucles
+  - "Édition Limitée" → /collections/edition-limitee
+  - "Nouveautés" → /collections/nouveautes
+  - "Meilleures ventes" → /collections/meilleures-ventes
+  - "Cadeaux" → /collections/cadeaux
+Résultat attendu : 9 collections créées.
+
+ÉTAPE 3.2 — Créer les 10 premiers produits
+────────────────────────────────────────────
+Durée : 5-6 heures (30-45 min par produit)
+Où : Shopify → Catalogue → Produits → Ajouter un produit
+
+IMPORTANT avant de commencer :
+→ Ajoute le tag "needs-ai-shot" sur chaque produit au moment de la création
+  (ça déclenchera le pipeline photo Firefly automatiquement plus tard)
+→ Ajoute le tag "needs-3d" pour déclencher Meshy AI automatiquement
+
+Structure de chaque fiche produit :
+
+╔══════════════════════════════════════════════════════════╗
+║ STRUCTURE FICHE PRODUIT BIJOU-R                          ║
+╠══════════════════════════════════════════════════════════╣
+║ TITRE : [Nom] — [Métal] [Carats] | Bijou-R              ║
+║ Ex : Bracelet Tennis Signature — Or Blanc 18 Carats     ║
+║                                                          ║
+║ DESCRIPTION COURTE (3 lignes émotionnelles) :           ║
+║ "Elle se glisse au poignet comme une promesse           ║
+║ silencieuse. [Histoire courte]. [Certification]."       ║
+║                                                          ║
+║ SPECS EN BULLETS :                                       ║
+║ ✓ Or blanc 18 carats — 18,4g                            ║
+║ ✓ 47 diamants — 4,2 carats total                        ║
+║ ✓ Couleur F-G / Pureté VS1-VS2                          ║
+║ ✓ Certificat GIA inclus                                 ║
+║ ✓ Garantie à vie                                        ║
+║                                                          ║
+║ RÉASSURANCE FINALE :                                     ║
+║ "Livrée dans son écrin de cuir, accompagnée             ║
+║ du certificat d'authenticité signé par notre            ║
+║ maître-joaillier."                                      ║
+║                                                          ║
+║ SEO :                                                    ║
+║ - Meta title (60 chars) :                               ║
+║   "Bracelet Tennis Or Blanc 18k — 4,2ct | Bijou-R"     ║
+║ - Meta description (155 chars) :                        ║
+║   "Bracelet tennis en or blanc 18 carats, 47 diamants  ║
+║   certifiés GIA. Fabriqué à Paris, garantie à vie.     ║
+║   Livraison 48h offerte dès 150€."                     ║
+╚══════════════════════════════════════════════════════════╝
+
+Les 10 produits à créer (dans cet ordre) :
+
+  1. Bracelet Tennis Signature Or Blanc 18k
+     Prix : 24 990 € (L'ANCRE — ce produit CHOQUE le client)
+     Collection : Édition Limitée + Bracelets Tennis
+     Variants : longueur 16/17/18/19 cm
+
+  2. Bracelet Tennis Or Blanc 18k 1ct
+     Prix : 6 990 €
+     Collection : Bracelets Tennis
+
+  3. Bracelet Tennis Or Jaune 14k (BESTSELLER)
+     Prix : 2 490 €
+     Collection : Bracelets Tennis + Meilleures ventes
+     Affiché en 4× avec Alma : "4× 622€ sans frais"
+
+  4. Bracelet Tennis Or Vermeil 0.5ct
+     Prix : 890 €
+     Collection : Bracelets Tennis + Cadeaux
+
+  5. Bracelet Tennis Argent (TRAFIC)
+     Prix : 290 €
+     Collection : Bracelets Tennis + Cadeaux
+
+  6. Collier Riviera Diamants Or 18k
+     Prix : 1 890 €
+     Collection : Colliers
+
+  7. Collier Pendentif Diamant Solitaire
+     Prix : 590 €
+     Collection : Colliers + Cadeaux
+
+  8. Bague Solitaire Or Blanc 18k
+     Prix : 1 490 €
+     Collection : Bagues
+
+  9. Boucles d'Oreilles Créoles Or 18k
+     Prix : 449 €
+     Collection : Boucles d'oreilles + Cadeaux
+
+  10. Set Cadeau Collier + Boucles
+      Prix : 790 € (valeur 1 040 € — afficher l'économie)
+      Collection : Cadeaux + Meilleures ventes
+
+POUR CHAQUE PRODUIT, remplis aussi les metafields (bijour.*) créés à l'étape 2.6.
+
+Résultat attendu : 10 fiches produit complètes, bien rédigées, avec tags.
+
+ÉTAPE 3.3 — Uploader les photos existantes
+────────────────────────────────────────────
+Durée : 1 heure
+Comment :
+  1. Pour chaque produit, uploade minimum 3 photos :
+     - Photo 1 : fond blanc pur (packshot)
+     - Photo 2 : photo "portée" si tu en as (poignet, cou)
+     - Photo 3 : détail macro (texture, brillance)
+  2. Pour chaque photo, remplis le champ "Texte alt" :
+     Ex : "Bracelet tennis or blanc 18 carats 4 carats Bijou-R"
+  3. Garde un ordre logique : packshot en premier
+Résultat attendu : photos uploadées sur chaque produit.
+
+ÉTAPE 3.4 — Configurer la homepage
+─────────────────────────────────────
+Durée : 2 heures
+Où : Shopify → Boutique en ligne → Personnaliser → Home
+
+Structure à construire :
+  Section 1 : Vidéo héro (si tu as une vidéo, sinon photo plein écran)
+              Headline : "Le bijou que vous porterez toute votre vie."
+              Sous-titre : "Diamants certifiés GIA. Sertissage à la main."
+              CTA 1 : "Je découvre" → /collections/meilleures-ventes
+              CTA 2 : "Créer ma bague →" → /pages/creer-ma-bague
+
+  Section 2 : Bandeau texte défilant
+              "Livraison offerte dès 150€ · Garantie à vie · Diamants certifiés GIA"
+
+  Section 3 : Collection mise en avant (3 produits best-sellers)
+              Titre : "Les plus appréciées"
+
+  Section 4 : Grille catégories (4 images cliquables)
+              Bracelets / Colliers / Bagues / Boucles
+
+  Section 5 : Produit hero (le Signature — L'ANCRE)
+              Titre : "Le Signature — La pièce qui définit tout"
+              Image fullscreen du bracelet tennis 24 990€
+
+  Section 6 : Les 4 piliers
+              Icône + texte pour chaque :
+              - "Diamants certifiés GIA"
+              - "Atelier français"
+              - "Garantie à vie"
+              - "Livraison 48h"
+
+  Section 7 : Témoignages (tu en auras besoin dès le lancement —
+              commence avec 3-5 avis vrais de proches si nécessaire)
+
+  Section 8 : Newsletter
+              "Recevez notre guide 'Choisir son diamant' + 10% sur
+              votre 1ère commande"
+
+Résultat attendu : homepage complète et belle.
+
+ÉTAPE 3.5 — Configurer la navigation
+──────────────────────────────────────
+Durée : 20 minutes
+Où : Shopify → Boutique en ligne → Navigation
+
+Menu principal :
+  Bracelets → Sous-menu : Tennis / Chaînes / Tout voir
+  Colliers → Sous-menu : Pendentifs / Riviera / Tout voir
+  Bagues → Sous-menu : Solitaires / Alliances / Créer ma bague
+  Boucles d'oreilles
+  Édition Limitée
+  ✨ Créer ma bague (en gras ou avec style différent)
+  Le Journal
+
+Footer :
+  Maison Bijou-R : À propos, Notre atelier, Engagements
+  Service client : Contact, Livraison, Retours, Garantie, Guide tailles, FAQ
+  Légal : CGV, CGU, Mentions, Confidentialité, Cookies
+  Réseaux : Instagram, TikTok, Facebook
+
+Résultat attendu : navigation claire et intuitive.
+
+
+================================================================================
+PHASE 4 — APPS ET AUTOMATIONS EMAIL (Jour 4-6)
+================================================================================
+
+ÉTAPE 4.1 — Installer les apps essentielles
+─────────────────────────────────────────────
+Durée : 2 heures
+Où : Shopify App Store
+
+Dans cet ordre :
+
+  1. Klaviyo
+     → Cherche "Klaviyo" dans l'App Store
+     → Installe, crée un compte sur klaviyo.com
+     → Connecte à Shopify (ça se fait automatiquement)
+     → IMPORTANT : active la capture email sur tous les formulaires
+
+  2. Loox (avis photos)
+     → Cherche "Loox" dans l'App Store
+     → Plan starter (environ 10$/mois)
+     → Configure l'email automatique de demande d'avis (J+7 après livraison)
+
+  3. Fomo (notifications sociales)
+     → Installe Fomo
+     → Active les notifications "X personnes regardent"
+     → Connecte au stock Shopify pour "Plus que X en stock"
+
+  4. Hextom: Free Shipping Bar
+     → Gratuit
+     → Configure : "Plus que X€ pour la livraison express offerte"
+     → Seuil : 150€ pour la livraison standard, 400€ pour l'express
+
+  5. Back in Stock
+     → Configure les alertes automatiques
+     → Email + SMS quand un produit est réapprovisionné
+
+  6. Tidio (chat)
+     → Plan gratuit pour commencer
+     → Personnalise le nom du bot : "Guida" (ton assistante IA future)
+     → Configure les réponses automatiques aux questions fréquentes
+
+  7. Vitals (SEO + popups)
+     → ~30$/mois, mais remplace 40+ apps
+     → Active : popup newsletter (exit-intent + 30s delay),
+       push notifications, partage réseaux sociaux
+
+Résultat attendu : 7 apps installées et configurées.
+
+ÉTAPE 4.2 — Configurer Klaviyo — Les 5 flows prioritaires
+───────────────────────────────────────────────────────────
+Durée : 4-5 heures (flows les plus importants)
+Où : app.klaviyo.com → Flows
+
+FLOW 1 — Welcome Series (PRIORITÉ ABSOLUE)
+  Déclencheur : "Subscribed to List" (inscription newsletter)
+  Séquence :
+  Email 1 — Immédiat
+    Sujet : "Bienvenue dans le cercle Bijou-R"
+    Contenu :
+    - Accueil chaleureux (2 paragraphes — ton de la marque)
+    - Ton code exclusif : BIENVENUE10 (-10% sur 1ère commande)
+    - 3 produits best-sellers avec photos
+    - Bouton : "Je découvre la collection →"
+
+  Wait : 1 jour
+
+  Email 2 — J+1
+    Sujet : "L'histoire derrière chaque bijou"
+    Contenu :
+    - Storytelling : pourquoi Bijou-R existe
+    - Vidéo de l'atelier (si disponible) ou photo
+    - "Chaque pièce est fabriquée à la main à Paris"
+
+  Wait : 2 jours
+
+  Email 3 — J+3
+    Sujet : "Le Signature : le bracelet qui a tout changé"
+    Contenu :
+    - Présentation du bracelet tennis 24 990€
+    - L'histoire derrière le prix
+    - "Voir la collection →"
+
+  Wait : 2 jours
+
+  Email 4 — J+5
+    Sujet : "127 femmes ont déjà choisi Bijou-R"
+    Contenu :
+    - Témoignages clientes avec photos
+    - UGC si disponible
+    - Reviews 5 étoiles
+
+  Wait : 3 jours
+
+  Email 5 — J+8
+    Sujet : "Dernières heures pour utiliser votre code"
+    Contenu :
+    - Rappel du code BIENVENUE10 (expire dans 48h)
+    - Urgence douce
+    - Bestsellers
+
+FLOW 2 — Abandon de panier (2ÈME PRIORITÉ)
+  Déclencheur : "Started Checkout" → pas acheté en 1h
+  Séquence :
+  Email 1 — +1 heure
+    Sujet : "[Prénom], vous avez oublié quelque chose..."
+    Contenu :
+    - Photo du/des produits dans le panier
+    - Lien direct vers le checkout
+    - Aucune remise à ce stade
+
+  Wait : 23 heures
+
+  Email 2 — +24 heures
+    Sujet : "Ce bijou vous attendait"
+    Contenu :
+    - Photo produit + description émotionnelle
+    - 3 avis clients sous le produit
+    - Réassurances : garantie, livraison, retours
+    - "Finaliser ma commande →"
+
+  Wait : 24 heures
+
+  Email 3 — +48 heures (avec offre)
+    Sujet : "Un geste pour vous décider"
+    Contenu :
+    - -10% code unique valable 24h
+    - Photo produit
+    - "Je profite de l'offre →"
+
+FLOW 3 — Post-achat (confirmation + suivi)
+  Déclencheur : "Placed Order"
+  Séquence :
+  Email 1 — Immédiat (après confirmation automatique Shopify)
+    Sujet : "Votre bijou est entre nos mains, [Prénom]"
+    Contenu :
+    - Récap commande
+    - Ce qui va se passer (timeline : sertisseur → contrôle → expédition)
+    - "Suivre ma commande →"
+    - Guide d'entretien en PDF joint
+
+  Email 2 — +7 jours (après livraison estimée)
+    Sujet : "Comment va votre bijou ?"
+    Contenu :
+    - Demande d'avis Loox (lien direct)
+    - Guide d'entretien rappel
+    - "Partagez votre bijou sur Instagram et taguez @bijou.r"
+
+  Email 3 — +14 jours
+    Sujet : "La pièce qui va parfaitement avec la vôtre"
+    Contenu :
+    - Cross-sell intelligent (si bague → collier assorti)
+    - "Compléter ma parure →"
+
+FLOW 4 — Win-Back (clients inactifs)
+  Déclencheur : "Last Purchase > 60 jours"
+  Email 1 — "Nous avons une nouvelle pièce pour vous"
+  Wait : 5 jours
+  Email 2 — -15% code unique, valable 7 jours
+  Wait : 5 jours
+  Email 3 — "Dernière chance" + last call
+
+FLOW 5 — Anniversaire
+  Déclencheur : "30 jours avant la date anniversaire" (si connue)
+  Email unique : "-20% pour votre anniversaire — valable tout le mois"
+
+ATTENTION : ne lance pas les 18 flows en même temps. Commence par ces 5.
+Ajoute les autres progressivement (1-2 par semaine) une fois les premiers
+testés et opérationnels.
+
+Résultat attendu : 5 flows Klaviyo actifs, testés, opérationnels.
+
+ÉTAPE 4.3 — Configurer Shopify Flow
+─────────────────────────────────────
+Durée : 1 heure
+Où : Apps → Shopify Flow
+
+Créer ces automations :
+
+  1. Tag VIP automatique
+     Déclencheur : Customer total_spent dépasse 1000€
+     Action : Ajouter tag "VIP" au client
+     Bonus : Envoyer email Klaviyo "Bienvenue dans le Cercle Diamant"
+
+  2. Alerte commande importante
+     Déclencheur : Order total_price > 500€
+     Action : Envoyer notification Slack ou email interne
+     (pour soigner personnellement ces commandes)
+
+  3. Tag "needs-ai-shot" pour pipeline photo automatique
+     Déclencheur : Product created + images_count = 0
+     Action : Ajouter tag "needs-ai-shot"
+     (Ce tag déclenchera n8n → Firefly plus tard)
+
+  4. Tag "needs-3d" pour pipeline 3D automatique
+     Déclencheur : Product created + images_count > 0
+     Action : Ajouter tag "needs-3d"
+     (Ce tag déclenchera n8n → Meshy AI plus tard)
+
+  5. Masquer produit si stock = 0
+     Déclencheur : Inventory level < 1
+     Action : Masquer le produit de la boutique + ajouter tag "sold-out"
+
+Résultat attendu : 5 automations Shopify Flow actives.
+
+
+================================================================================
+PHASE 5 — GÉNÉRATION PHOTOS ET 3D (Jour 5-8)
+================================================================================
+
+ÉTAPE 5.1 — Créer un compte Adobe Developer
+─────────────────────────────────────────────
+Durée : 30 minutes
+Où : developer.adobe.com
+Comment :
+  1. Créer un compte Adobe Developer (gratuit pour commencer)
+  2. Créer un "Project" dans la console
+  3. Ajouter le produit "Firefly Services API"
+  4. Copier : CLIENT_ID et CLIENT_SECRET dans un fichier sécurisé
+  5. Pour obtenir un access token :
+     curl -X POST https://ims-na1.adobelogin.com/ims/token/v3 \
+       -H "Content-Type: application/x-www-form-urlencoded" \
+       -d "client_id=TON_CLIENT_ID&client_secret=TON_SECRET&grant_type=client_credentials&scope=openid,AdobeID,firefly_api,ff_apis"
+Note : garde ces credentials en sécurité, ne les mets jamais dans du code public.
+
+ÉTAPE 5.2 — Créer un compte Meshy AI
+──────────────────────────────────────
+Durée : 10 minutes
+Où : meshy.ai
+Comment :
+  1. Créer un compte (plan Pro recommandé — 20$/mois)
+  2. Récupérer ta clé API : Settings → API Key
+  3. Coller la clé dans un fichier sécurisé
+Test rapide (dans Meshy directement sans API) :
+  1. Va dans "Image to 3D"
+  2. Uploade une photo d'un de tes bijoux
+  3. Lance la génération (2-5 minutes)
+  4. Télécharge le .glb résultant
+  5. Uploade sur un produit Shopify (médias du produit) pour tester le viewer
+Résultat attendu : tu vois le bijou en 3D interactif sur la fiche produit.
+
+ÉTAPE 5.3 — Tester le viewer 3D Shopify
+─────────────────────────────────────────
+Durée : 15 minutes
+Comment :
+  1. Va sur un produit dans Shopify
+  2. Section "Médias"
+  3. Clique "Ajouter" → "Modèle 3D"
+  4. Uploade le fichier .glb téléchargé depuis Meshy
+  5. Sauvegarde
+  6. Va sur la boutique → fiche produit
+  7. Tu devrais voir un viewer 3D interactif
+  8. Sur mobile : bouton "Voir en AR" devrait apparaître
+Résultat attendu : viewer 3D fonctionnel sur une fiche produit test.
+
+ÉTAPE 5.4 — Installer n8n pour les automations
+─────────────────────────────────────────────────
+Durée : 1 heure
+Option 1 (recommandé) : n8n cloud sur n8n.io (20$/mois, zéro maintenance)
+Option 2 : VPS Hetzner (5€/mois) avec Docker
+
+Pour n8n cloud :
+  1. Va sur n8n.io → "Get started for free"
+  2. Crée ton compte
+  3. Ton instance est prête
+
+ÉTAPE 5.5 — Créer le workflow Meshy dans n8n
+─────────────────────────────────────────────
+Durée : 2 heures
+Ce workflow : quand tu crées un produit Shopify avec le tag "needs-3d",
+il génère automatiquement un modèle 3D et l'uploade sur le produit.
+
+Dans n8n, crée un nouveau workflow et ajoute ces nodes dans l'ordre :
+
+  NODE 1 : Shopify Trigger
+  → Event : "Product Created"
+  → Credentials : connecte ton shop Shopify
+    (Settings Shopify → Apps → Développer des apps → Créer une app →
+    Permissions API Admin → Products : lecture + écriture + médias)
+
+  NODE 2 : IF (condition)
+  → Vérifie si le product a le tag "needs-3d"
+  → Condition : {{$json.tags.includes("needs-3d")}} = true
+
+  NODE 3 : HTTP Request (récupérer la première image du produit)
+  → URL : https://{{shopDomain}}/admin/api/2026-01/products/{{$json.id}}/images.json
+  → Headers : X-Shopify-Access-Token: {{ton_token}}
+
+  NODE 4 : HTTP Request (Meshy API - créer le job 3D)
+  → Method : POST
+  → URL : https://api.meshy.ai/v2/image-to-3d
+  → Headers : Authorization: Bearer {{ton_meshy_api_key}}
+  → Body (JSON) :
+    {
+      "image_url": "{{URL de la 1ère image du produit}}",
+      "enable_pbr": true,
+      "surface_mode": "hard",
+      "topology": "quad",
+      "target_polycount": 30000
+    }
+  → Récupère le task_id dans la réponse
+
+  NODE 5 : Wait (5 minutes)
+  → Pause pendant que Meshy génère le modèle
+
+  NODE 6 : HTTP Request (vérifier le status)
+  → Method : GET
+  → URL : https://api.meshy.ai/v2/image-to-3d/{{task_id}}
+  → Si status = "succeeded" → continuer
+  → Si status = "pending" → ajouter un autre Wait de 5 min et revérifier
+
+  NODE 7 : HTTP Request (télécharger le .glb)
+  → GET l'URL du .glb depuis la réponse Meshy
+
+  NODE 8 : HTTP Request (upload vers Shopify)
+  → POST /admin/api/2026-01/products/{{product_id}}/media.json
+  → Body :
+    {
+      "media": {
+        "original_source": "{{glb_url}}",
+        "media_type": "MODEL_3D",
+        "alt": "Vue 3D - {{product_title}}"
+      }
+    }
+
+  NODE 9 : Slack (notification)
+  → Message : "Modèle 3D généré et uploadé pour {{product_title}} ✅"
+
+  NODE 10 : Shopify (retirer le tag "needs-3d", ajouter "3d-done")
+
+Résultat attendu : workflow automatique qui génère des .glb à chaque nouveau produit.
+
+CONSEIL : teste d'abord manuellement, puis active le trigger automatique.
+
+
+================================================================================
+PHASE 6 — RÉSEAUX SOCIAUX (Jour 6-8)
+================================================================================
+
+ÉTAPE 6.1 — Créer la page Instagram
+──────────────────────────────────────
+Durée : 30 minutes
+Comment :
+  1. Télécharge l'app Instagram (si pas déjà fait)
+  2. Crée un nouveau compte
+  3. Handle à essayer (par ordre de préférence) :
+     → @bijou.r
+     → @bijour_officiel
+     → @bijour_paris
+     → @bijour_studio
+  4. Configure en compte PROFESSIONNEL : Paramètres → Compte →
+     "Passer à un profil professionnel" → Catégorie : Shopping/Bijouterie
+
+  5. Remplis la bio :
+     "✦ Bijoux qui durent
+     💎 Or 18k & Diamants certifiés GIA
+     🏛 Fabriqués en France · Garantie à vie
+     📦 Livraison express"
+     + Lien : bijou-r.com
+
+  6. Photo de profil : logo Bijou-R sur fond noir/blanc
+
+  7. Ajoute le lien vers bijou-r.com dans le champ "Site web"
+
+Résultat attendu : compte Instagram Business créé et configuré.
+
+ÉTAPE 6.2 — Créer la page TikTok
+──────────────────────────────────
+Durée : 20 minutes
+Comment :
+  1. Télécharge TikTok
+  2. Crée un compte : @bijour_ ou @bijourofficial
+  3. Passe en compte Business : Paramètres → Passer en compte Pro →
+     Business → Catégorie : Mode & Beauté / Bijouterie
+  4. Mets le lien bijou-r.com en bio
+  5. Active TikTok Shop si disponible dans ta région
+
+Résultat attendu : compte TikTok Business créé.
+
+ÉTAPE 6.3 — Créer la page Facebook
+─────────────────────────────────────
+Durée : 20 minutes
+IMPORTANT : Cette page est pour les PUBS, pas pour le contenu.
+Comment :
+  1. Crée une Page Facebook "Bijou-R" (pas un profil perso)
+  2. Catégorie : Bijouterie / Boutique
+  3. Lie au compte Instagram (via Meta Business Suite)
+  4. C'est tout pour l'instant — tu n'as pas besoin de poster dessus
+
+ÉTAPE 6.4 — Configurer Meta Business Manager
+──────────────────────────────────────────────
+Durée : 1 heure (INDISPENSABLE pour les pubs)
+Où : business.facebook.com
+Comment :
+  1. Crée un compte Business Manager (business.facebook.com)
+  2. Lie ta Page Facebook
+  3. Lie ton compte Instagram
+  4. Crée un compte publicitaire
+  5. Ajoute le mode de paiement (carte bancaire)
+  6. Configure le Meta Pixel :
+     → Meta Business Suite → Gestion des événements → Ajouter une source de données
+     → Copie l'ID Pixel
+     → Dans Shopify : Boutique en ligne → Préférences →
+       Section "Pixel Facebook" → Colle l'ID
+
+Résultat attendu : Meta Pixel installé et vérifié (teste avec Meta Pixel Helper).
+
+ÉTAPE 6.5 — Configurer Google Tag Manager + GA4
+──────────────────────────────────────────────────
+Durée : 1 heure
+Comment :
+  1. Va sur analytics.google.com → créer une propriété GA4 "Bijou-R"
+  2. Va sur tagmanager.google.com → créer un container "bijou-r.com"
+  3. Dans Shopify → Boutique en ligne → Préférences →
+     Section "Google Analytics" → colle l'ID GA4 (G-XXXXXXXXXX)
+  4. Vérifie avec l'extension "Google Tag Assistant" dans Chrome
+
+Résultat attendu : analytics fonctionnel (tu vois les visites en temps réel).
+
+
+================================================================================
+PHASE 7 — ManyChat + SAV (Jour 8-10)
+================================================================================
+
+ÉTAPE 7.1 — Installer ManyChat
+───────────────────────────────
+Durée : 1 heure
+Où : manychat.com
+Comment :
+  1. Crée un compte
+  2. Connecte ton compte Instagram Business
+  3. Connecte ton compte TikTok Business (si disponible)
+
+Flows à créer en priorité :
+
+  FLOW 1 : Keyword en Story
+  Déclencheur : Quelqu'un répond "PRIX" à une Story
+  Action : Envoyer un DM automatique avec :
+    "Bonjour ! Voici notre collection avec tous les prix →
+    [lien boutique]
+    Code -10% pour toi : STORY10 💛"
+
+  FLOW 2 : Commentaire "INFO" sous un post
+  Déclencheur : Commentaire contient "info" ou "prix" ou "lien"
+  Action : Envoyer un DM avec le lien du produit du post
+
+  FLOW 3 : Lead magnet "GUIDE"
+  Déclencheur : DM contenant "GUIDE"
+  Action :
+    1. Répondre en DM avec le PDF "Comment choisir son diamant"
+    2. Demander l'email pour recevoir le guide
+    3. Push email vers Klaviyo (liste "ManyChat leads")
+    4. Trigger le Welcome Series Klaviyo
+
+Résultat attendu : 3 flows ManyChat actifs sur Instagram.
+
+ÉTAPE 7.2 — Configurer Gorgias (SAV)
+──────────────────────────────────────
+Durée : 1 heure
+Où : gorgias.com
+Comment :
+  1. Crée un compte (plan Starter ~10$/mois pour commencer)
+  2. Connecte :
+     - Email support@bijou-r.com
+     - Instagram (DMs)
+     - Shopify (pour voir les commandes dans les tickets)
+  3. Crée des macros pour les 10 questions les plus fréquentes :
+     - "Où est ma commande ?" → réponse avec lien tracking
+     - "Comment retourner un article ?" → procédure retour
+     - "Quelle taille prendre ?" → lien guide des tailles
+     - "Mon code promo ne fonctionne pas" → vérification manuelle
+     - "Je veux modifier ma commande" → procédure modification
+
+Résultat attendu : SAV centralisé opérationnel.
+
+
+================================================================================
+PHASE 8 — PRÉ-LANCEMENT (Semaine 5-6)
+================================================================================
+
+ÉTAPE 8.1 — Créer la landing page "Coming Soon"
+─────────────────────────────────────────────────
+Durée : 2 heures
+Comment dans Shopify :
+  1. Boutique en ligne → Pages → Créer une page "coming-soon"
+  2. Contenu :
+     - Vidéo ou image mystère du bracelet tennis (flou artistique)
+     - Headline : "Quelque chose d'exceptionnel arrive."
+     - Sous-titre : "Bijou-R — La maison joaillière qui change les règles"
+     - Formulaire email :
+       "Soyez parmi les premiers à voir la collection.
+        Les 100 premières inscriptions reçoivent un accès prioritaire
+        + code -15% exclusif."
+     - Compte à rebours (app : Countdown Timer Bar)
+
+ÉTAPE 8.2 — Lancer la pub Facebook/Instagram de capture email
+──────────────────────────────────────────────────────────────
+Durée : 1 heure (à configurer dans Meta Ads Manager)
+Objectif : 5 000 leads avant le lancement
+Budget : 20-30€/jour pendant 30 jours = 600-900€
+Ciblage :
+  - Femmes 25-45 ans, France (+ Israël si ciblé)
+  - Intérêts : Cartier, Tiffany, Vogue, Mode, Bijoux
+Créatif : vidéo mystère ou photo macro du diamant
+CTA : "Je veux être parmi les premières"
+
+ÉTAPE 8.3 — Sélectionner et briefer les influenceurs
+──────────────────────────────────────────────────────
+Durée : 3 heures
+Comment :
+  1. Va sur collabstr.com ou instagram.com (recherche manuelle)
+  2. Cherche : 5 000 à 50 000 followers, niche mode/bijoux/lifestyle
+  3. Cible : compte en FR ou IL, taux d'engagement > 3%
+  4. Envoie 30 DMs (30% répondent, 10% acceptent) :
+     "Bonjour [Prénom], nous lançons Bijou-R, maison de joaillerie
+     française. Je t'envoie une pièce de ta collection pour que tu
+     la partages si tu l'aimes. Aucune obligation.
+     Intéressée ? Je t'envoie les détails."
+  5. Prépare les envois pour J-14 (les pièces doivent arriver avant
+     le lancement pour que les posts soient prêts)
+
+ÉTAPE 8.4 — Briefer l'agileur (préparer le tournage)
+──────────────────────────────────────────────────────
+Prépare avant son retour :
+  ✓ Liste des 10 pièces à filmer avec l'ordre de priorité
+  ✓ Props de tournage : marbre blanc, velours noir, lumière dorée,
+    boîtes kraft, fleurs séchées, cartes Bijou-R
+  ✓ Brief écrit (voir Partie 12 du PLAN_COMPLET_BIJOUR.md)
+  ✓ Accès Instagram + TikTok en mode éditeur
+  ✓ 20 hooks vidéo écrits et prêts
+  ✓ Demo du viewer 3D à filmer (= contenu fort sur TikTok)
+
+
+================================================================================
+PHASE 9 — LANCEMENT (Semaine 10-11)
+================================================================================
+
+ÉTAPE 9.1 — Soft launch VIP (J-2)
+────────────────────────────────────
+Comment :
+  1. Email à toute la liste ("Accès prioritaire dans 48h")
+  2. Code exclusif VIP : BIJOUR-VIP (-15%)
+  3. Accès boutique en preview (page non-indexée ou via code)
+  4. Objectif : 10-20 premières commandes pour tests réels
+
+ÉTAPE 9.2 — Checklist technique (J-1, la veille)
+──────────────────────────────────────────────────
+  □ Backup Shopify (Rewind)
+  □ Test checkout complet : commande → paiement → confirmation email
+  □ Test sur iPhone + Android (viewer 3D, checkout, Alma)
+  □ Tous les flows Klaviyo activés et testés
+  □ Meta Pixel Event "Purchase" confirmé dans Events Manager
+  □ Google Tag Assistant : tous les events GA4 OK
+  □ Stocks vérifiés et synchronisés
+  □ Équipe SAV briefée (macros Gorgias prêtes)
+  □ Plan B si crash : page maintenance + collection email manuelle
+
+ÉTAPE 9.3 — Jour J
+─────────────────────
+  10h00 — Email blast (Klaviyo → toute la liste)
+  10h00 — Story Instagram (compte à rebours → ouverture)
+  10h00 — Post Instagram (le produit star + storytelling)
+  10h05 — Activation Meta Ads (campagne "Launch")
+  10h05 — Activation Google Ads (PMax + Brand Search)
+  10h30 — SMS aux VIP si Klaviyo SMS configuré
+  11h00 — Influenceurs publient leurs posts (coordonnés)
+  12h00 — LinkedIn post personnel du fondateur
+  14h00 — Instagram Live (coulisses, Q&A, unboxing en direct)
+  20h00 — Story récap : "X commandes en une journée"
+
+
+================================================================================
+PHASE 10 — BLOG AEO (À démarrer en parallèle dès le lancement)
+================================================================================
+
+ÉTAPE 10.1 — Créer la structure du Journal
+────────────────────────────────────────────
+Durée : 30 minutes
+Où : Shopify → Boutique en ligne → Articles de blog
+
+  1. Renomme le blog par défaut en "Le Journal"
+  2. URL : /journal
+  3. Crée les 6 catégories via les tags :
+     guides-achat / art-de-porter / comprendre / atelier / histoires / entretien
+
+ÉTAPE 10.2 — Rédiger les 4 premiers articles piliers
+──────────────────────────────────────────────────────
+Durée : 8-10 heures (2-3 heures par article)
+Les 4 premiers articles (BOFU — intention forte) :
+
+  1. "Comment choisir un bracelet tennis en or : guide complet 2026"
+     → Cible les gens qui veulent acheter mais ne savent pas quoi
+     → Lier vers les 5 modèles de bracelets tennis
+
+  2. "Diamant naturel ou de laboratoire : que choisir ?"
+     → Question très posée aux IA en 2026
+     → Réponse complète, tableau comparatif, FAQ
+
+  3. "Or 14 ou 18 carats : quelle différence pour un bijou ?"
+     → Guide éducatif → convertit vers les produits
+
+  4. "Combien coûte un vrai bracelet tennis ?"
+     → Répond à la question numéro 1 sur Google + IA
+     → Présente nos niveaux de prix avec le contexte
+
+Structure minimale de chaque article :
+  - TL;DR en haut (4 lignes — sera cité par Perplexity/ChatGPT)
+  - H1 = la query cible exacte
+  - Au moins 1 tableau comparatif
+  - Section FAQ (5 questions) avec schema JSON-LD
+  - 3 liens internes vers des produits
+  - Meta title + meta description remplis
+  - 1500 mots minimum
+
+ÉTAPE 10.3 — Setup WordPress... pardon, Shopify Blog API + Claude
+───────────────────────────────────────────────────────────────────
+(Cette étape est pour l'automatisation long terme — mois 2-3)
+Durée : 2-3 heures de setup n8n
+→ Référence : workflow détaillé dans la Partie 7 de PLAN_COMPLET_BIJOUR.md
+→ Une fois en place, 2 articles/semaine se rédigent quasi-automatiquement
+
+
+================================================================================
+PHASE 11 — CONFIGURATEUR BAGUE (Mois 2-3)
+================================================================================
+
+ÉTAPE 11.1 — Prototyper les 8 étapes en Figma
+───────────────────────────────────────────────
+Durée : 1 journée
+Avant d'écrire une ligne de code, dessine chaque étape dans Figma
+(ou même sur papier). Montre le proto à 5 personnes. Ajuste.
+C'est le moyen le plus rapide d'éviter les erreurs de dev coûteuses.
+
+ÉTAPE 11.2 — Sourcer les diamants
+───────────────────────────────────
+Durée : 2 semaines de démarches
+Où :
+  - rapnet.com (réseau professionnel diamantaires) → demande accès
+  - vdbonline.com (Virtual Diamond Boutique) → alternative
+  - Pour lab-grown : wdlabgrowndiamonds.com
+
+Ce qu'il faut obtenir :
+  - Accès API ou flux CSV de leurs stocks
+  - Vidéos 360° des diamants (fournies par certains)
+  - PDFs des certificats GIA/IGI
+
+ÉTAPE 11.3 — Développer le MVP du configurateur
+─────────────────────────────────────────────────
+Durée : 2-4 semaines (dev external ou Claude Code)
+Stack recommandée :
+  - Page Shopify custom (/pages/creer-ma-bague)
+  - Front-end : Alpine.js (léger) + Three.js (viewer 3D)
+  - Modèles 3D des montures : générés via Meshy AI
+  - Calcul de prix : JavaScript côté client
+  - Soumission finale : création produit via Shopify Admin API
+
+MVP minimum (étapes 1, 2, 3 seulement) pour valider le concept,
+puis ajouter les étapes 4-8 progressivement.
+
+ÉTAPE 11.4 — Tester avec 10 vrais utilisateurs
+────────────────────────────────────────────────
+Avant le déploiement public, fais tester par 10 personnes.
+Questions clés :
+  - "Est-ce que tu comprends comment utiliser le configurateur ?"
+  - "À quel moment tu t'es senti(e) confus(e) ?"
+  - "Est-ce que tu te sentais excité(e) par ta bague ?"
+  - "Qu'est-ce qui t'a presque fait abandonner ?"
+Ajuste selon les retours. Recommence jusqu'à ce que tout le monde finisse.
+
+
+================================================================================
+SUIVI HEBDOMADAIRE — CE QU'IL FAUT VÉRIFIER CHAQUE SEMAINE
+================================================================================
+
+Chaque lundi matin, vérifier ces 10 KPIs :
+
+  1. CHIFFRE D'AFFAIRES HEBDO
+     Où : Shopify → Analytics → Vue d'ensemble
+     Objectif M1 : 5 000-10 000€/semaine
+
+  2. TAUX DE CONVERSION
+     Où : Shopify Analytics ou Google Analytics 4
+     Objectif : > 1.5% (2% = excellent pour bijouterie)
+
+  3. ROAS META ADS
+     Où : Meta Ads Manager → Vue d'ensemble compte
+     Objectif : > 2.5 (si < 1.5, pause et nouveaux créatifs)
+
+  4. ROAS GOOGLE ADS
+     Où : Google Ads → Vue d'ensemble
+     Objectif : > 3.5 sur Search, > 4 sur Shopping
+
+  5. ABANDON PANIER
+     Où : Shopify Analytics → Checkout
+     Objectif : < 70% (si > 75%, audit le checkout)
+
+  6. FLOWS KLAVIYO
+     Où : Klaviyo → Flows → Métriques
+     Vérifier : taux d'ouverture (objectif >30%), CTR (>3%), revenu par email
+
+  7. AVIS CLIENTS
+     Où : Loox dashboard
+     Objectif : minimum 5 nouveaux avis par semaine
+     Si 0 avis : vérifier que le flow "Review Request" est actif
+
+  8. STOCK
+     Où : Shopify → Produits → Inventaire
+     Action : réapprovisionner si < 5 unités sur les bestsellers
+
+  9. TICKETS SAV OUVERTS
+     Où : Gorgias
+     Objectif : aucun ticket ouvert > 24h
+
+  10. FOLLOWERS INSTAGRAM + TIKTOK
+      Croissance hebdo attendue M1 : +100-300/semaine
+
+Chaque vendredi, envoie un résumé de ces 10 métriques à toi-même par email.
+Avec le temps, tu verras les tendances. C'est comme ça qu'on prend les bonnes décisions.
+
+
+================================================================================
+ERREURS FRÉQUENTES À ÉVITER ABSOLUMENT
+================================================================================
+
+❌ NE PAS FAIRE
+  - Lancer sans avoir testé le checkout avec un vrai paiement
+  - Mettre des timers de stock faux (ex: "Stock épuisé dans 5h" en boucle)
+  - Créer des réductions agressives (soldes -50%) sur la homepage — détruit le luxe
+  - Publier des photos de mauvaise qualité sur Instagram
+  - Ignorer les tickets SAV plus de 24h au lancement
+  - Lancer les 18 flows Klaviyo en même temps sans les avoir testés
+  - Utiliser des photos de bijoux qui ne sont pas les tiens (droit d'auteur)
+  - Oublier les pages légales (CGV, politique retour) — obligatoires légalement en FR
+
+✅ TOUJOURS FAIRE
+  - Tester chaque automation avant de l'activer
+  - Répondre personnellement aux 50 premiers clients (emails, DMs)
+  - Collecter les avis dès la 1ère commande
+  - Analyser les 10 KPIs chaque semaine
+  - Toujours valider les articles de blog avant publication automatique
+  - Sauvegarder Shopify hebdomadairement (Rewind)
+
+
+================================================================================
+RAPPEL — CE QUI FAIT LA DIFFÉRENCE ENTRE UN SITE ORDINAIRE ET UN BANGER
+================================================================================
+
+1. L'ANCRE PSYCHOLOGIQUE
+   Le bracelet tennis à 24 990€ n'est pas là pour vendre.
+   Il est là pour que le 2 490€ paraisse accessible.
+   Ne l'enlève jamais de la homepage.
+
+2. LE VIEWER 3D
+   C'est le seul endroit sur internet où le client peut "toucher" ton bijou
+   avant de l'acheter. Chaque produit doit l'avoir.
+
+3. L'ÉMOTION DANS CHAQUE MOT
+   "Elle est pour moi" au lieu de "Ajouter au panier".
+   "Finaliser mon écrin" au lieu de "Payer".
+   Ces 3 mots font la différence entre une vente et un abandon.
+
+4. LE CONFIGURATEUR
+   C'est ta machine à tickets élevés. Une bague sur mesure ne se retourne pas.
+   C'est 4 500-15 000€ de ticket moyen contre 1 200€ en catalogue.
+
+5. LE BLOG AEO
+   Dans 12 mois, quand quelqu'un demande à Perplexity ou ChatGPT
+   "où acheter un bracelet tennis en France", Bijou-R doit être cité.
+   Ça ne s'improvise pas. Ça se construit article par article, dès maintenant.
+
+
+================================================================================
+FIN DU GUIDE
+================================================================================
+Si une étape n'est pas claire, dis-le. Je suis là à chaque étape.
+Chaque fois que tu bloques, on résout ensemble.
+
+Prochaine étape à faire maintenant :
+→ Acheter le domaine bijou-r.com (Étape 1.1)
+→ Envoyer le lien du site de référence
+
+Fichier complémentaire : PLAN_COMPLET_BIJOUR.md (stratégie détaillée complète)
+
+Bijou-R — Guide d'exécution v3 — 20/05/2026
+================================================================================
