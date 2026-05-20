@@ -1,8 +1,12 @@
 ================================================================================
 BIJOU-R — GUIDE D'EXÉCUTION PAS À PAS
 "Je te tiens la main à chaque étape"
-Rédigé le 20/05/2026
+Rédigé le 20/05/2026 — Mis à jour le 20/05/2026
 ================================================================================
+
+ORDRE DES PHASES (NE PAS SAUTER D'ÉTAPE) :
+  ✅ PHASE ACTIVE → SITE + OPTIMISATION + AUTOMATIONS
+  ⏳ PHASE SUIVANTE → MARKETING (TikTok, Instagram, contenu, ads)
 
 Ce guide est ton compagnon quotidien. Tu l'ouvres le matin, tu suis les étapes
 dans l'ordre. Chaque étape a un nom, une durée, un résultat attendu.
@@ -1198,16 +1202,52 @@ RAPPEL — CE QUI FAIT LA DIFFÉRENCE ENTRE UN SITE ORDINAIRE ET UN BANGER
 
 
 ================================================================================
+NOTES MARKETING — À TRAITER PLUS TARD (NE PAS TOUCHER MAINTENANT)
+================================================================================
+
+Ces décisions sont prises et enregistrées. On y revient quand le site est prêt.
+
+BUDGET RÉEL DE DÉPART :
+  Phase 1 (mois 1-2) : 70-370 €/mois (opérationnel + test ads minimal)
+  Phase 2 (mois 3-6) : 1 500-3 000 €/mois (si résultats validés)
+  Phase 3 (mois 6+) : scale selon ROAS — pas avant
+
+ADOBE CC DÉJÀ PAYÉ — CE QU'ON A GRATUITEMENT :
+  - Firefly (firefly.adobe.com + dans Photoshop) → photos produit IA
+  - Premiere Pro → montage vidéos TikTok/Instagram
+  - After Effects → animations prix, transitions
+  - Lightroom → presets cohérence visuelle
+  - Express → posts rapides réseaux sociaux
+  PAS BESOIN de payer Firefly Services API séparément pour démarrer.
+
+CANAL PRINCIPAL : TikTok organique + Instagram Reels
+  Pas de gros budget ads au départ — bijouterie trop chère en CPM.
+  Deux couches de contenu :
+  1. Vidéos avec toi qui parles (choc de prix, montage diamants)
+     → Formats : "Le choc de prix" / "La révélation" / "Le contre-argument"
+     → Édition : Premiere Pro + After Effects (Adobe CC)
+     → Fréquence : 3 vidéos/semaine minimum
+  2. Posts IA automatiques (produits sur fond luxe)
+     → Générés via pipeline n8n + Stability AI + Claude API caption
+     → Fréquence : 3 posts/semaine auto-planifiés via Metricool
+  Tunnel : Vidéo → "Commente TENNIS" → ManyChat DM → email capturé → Klaviyo
+
+N8N : SELF-HOSTED SUR VPS HETZNER (3,50 €/mois)
+  → Voir Étape 5.4 pour les commandes exactes d'installation.
+  → Pas de n8n cloud payant — on self-host.
+
+CAPTURE EMAILS :
+  → Klaviyo Forms (popup exit-intent + 30s delay)
+  → Checkout Shopify (email obligatoire)
+  → ManyChat → capture email dans le flow DM
+  → Gratuit jusqu'à 250 contacts, puis ~20€/mois
+
+
+================================================================================
 FIN DU GUIDE
 ================================================================================
 Si une étape n'est pas claire, dis-le. Je suis là à chaque étape.
 Chaque fois que tu bloques, on résout ensemble.
 
-Prochaine étape à faire maintenant :
-→ Acheter le domaine bijou-r.com (Étape 1.1)
-→ Envoyer le lien du site de référence
-
-Fichier complémentaire : PLAN_COMPLET_BIJOUR.md (stratégie détaillée complète)
-
-Bijou-R — Guide d'exécution v3 — 20/05/2026
+Bijou-R — Guide d'exécution v4 — 20/05/2026
 ================================================================================
