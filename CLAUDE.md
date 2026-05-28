@@ -19,6 +19,15 @@ Ne pas répondre sans avoir lu ces deux fichiers. Ils contiennent TOUT le contex
 - Canal principal : TikTok organique + Instagram Reels
 - Plateforme : Shopify Basic (39 €/mois)
 
+## Base opérationnelle : ISRAËL
+
+Tout le projet est basé et opéré depuis Israël. Conséquences immédiates :
+- **Paiement** : Shopify Payments et Stripe NON disponibles → utiliser **PayPlus** (payplus.co.il)
+- **Entité légale** : pas de SIRET → מספר עוסק (numéro d'entreprise israelien)
+- **Expédition** : DHL Express Israel / FedEx Israel / Israel Post EMS
+- **TVA** : 17% en Israël, 0% sur exports vers France/EU
+- **Apps et intervenants** : toujours vérifier la compatibilité Israël avant d'installer
+
 ---
 
 ## Phase en cours
