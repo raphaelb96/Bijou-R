@@ -843,7 +843,7 @@ Livraison FR / IL.
 - **Vrai.com** : transparence lab diamonds, prix juste.
 - **Maison Vever** : héritage parisien, photographies art.
 
-> **À demander au fondateur** : le site de référence précis qu'il veut imiter en priorité. Ce choix oriente le ton du thème et des hero sections.
+> **Décision fondateur (Mai 2026)** : référence principale = **Blue Nile** (bluenile.com). Design épuré, configurateur produit, présentation technique des diamants, ton confiant mais accessible.
 
 ### 10.2 Comptes IG/TikTok à étudier
 - @mejuri · @brilliantearth · @messika · @vraidesign · @missoma
