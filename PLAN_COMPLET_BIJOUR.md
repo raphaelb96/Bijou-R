@@ -25,6 +25,19 @@
 
 ## 1. VISION & POSITIONNEMENT
 
+### 1.0 Base opérationnelle — ISRAËL
+
+> ⚠️ IMPORTANT : Le projet est basé et opéré **depuis Israël**. Toutes les apps, outils, fournisseurs et intervenants doivent être compatibles avec une entité israélienne.
+
+Conséquences directes :
+- **Shopify Payments n'est PAS disponible en Israël** → gateway de paiement : **PayPlus** (payplus.co.il) ou **Tranzila** (tranzila.com)
+- **Stripe n'est PAS disponible pour les marchands israéliens**
+- **Pas de SIRET** → entité légale israélienne : **עוסק מורשה** (Osek Murshe) ou **חברה בע"מ** (société Ltd)
+- **Expédition depuis Israël** : DHL Express / FedEx Israel / Israel Post EMS
+- **TVA israélienne** : 17% en Israël, 0% pour les exportations (clients FR/EU)
+- **RGPD** s'applique pour les clients européens (France)
+- **Heure** : UTC+3 (IST) — à prendre en compte pour les horaires d'envoi Klaviyo/ManyChat
+
 ### 1.1 Le projet en une phrase
 **Bijou-R** : boutique de bijouterie en ligne (bracelets tennis, colliers, bagues, boucles d'oreilles) qui vend de l'atelier au client direct, avec un fondateur face-caméra, sur les marchés France + Israël (€ / ₪).
 
@@ -385,6 +398,7 @@ Exemples :
 | Outil | Rôle | Coût | Phase |
 |---|---|---|---|
 | **Shopify Basic** | E-commerce | 39 €/mois | 1 |
+| **PayPlus** | Paiement Israel (CB, Apple Pay) | % par transaction | 1 |
 | **Cloudflare** | DNS, CDN, sécurité | 0 € | 1 |
 | **Google Workspace** | Emails pro | 6 €/mois | 1 |
 | **n8n self-hosted** | Automations | 3,50 €/mois (VPS Hetzner CX22) | 1 |
@@ -397,6 +411,10 @@ Exemples :
 | **Metricool** | Auto-scheduling IG/TikTok | 0 € (Free tier 50 posts) | 2 |
 | **Judge.me** | Avis clients | 15 USD/mois | 1 (Awesome) ou 2 |
 | **Shopify Inbox** | Chat client | 0 € | 1 |
+
+> ⚠️ **Paiement Israël** : Shopify Payments et Stripe ne sont PAS disponibles pour les marchands israéliens. Utiliser **PayPlus** (payplus.co.il) comme gateway principal, **PayPal Business** en complément. PayPlus s'intègre nativement à Shopify via leur app officielle.
+
+> ⚠️ **Expédition depuis Israël** : DHL Express Israel, FedEx Israel, ou Israel Post EMS. Délai France : 3-7 jours ouvrés. Délai autres pays EU : 5-10 jours ouvrés.
 
 **Total fixe Phase 1 (hors Adobe déjà payé) : ~78 €/mois.**
 
@@ -730,7 +748,7 @@ Livraison FR / IL.
 - [ ] CGV rédigées (avec clause garantie rachat)
 - [ ] Politique de confidentialité RGPD-conforme
 - [ ] Politique cookies + bandeau CookieBot ou natif
-- [ ] SIRET / micro-entreprise active
+- [ ] Entité légale israélienne active (עוסק מורשה ou חברה בע"מ)
 
 ### 9.2 Domaine & emails
 - [ ] `bijou-r.com` acheté
@@ -744,7 +762,7 @@ Livraison FR / IL.
 - [ ] Thème Dawn installé et personnalisé
 - [ ] Devise : EUR primaire, ILS + USD via Markets
 - [ ] Langues : FR primaire, EN + HE via Translate & Adapt
-- [ ] Mode de paiement : Shopify Payments + PayPal + Apple Pay
+- [ ] Mode de paiement : PayPlus (gateway IL) + PayPal Business + Apple Pay via PayPlus
 - [ ] Modes de livraison : France 0€ dès 300€, Israël tarif unique, monde sur devis
 - [ ] Politique retours 30 jours configurée
 - [ ] Notifications email transactionnelles personnalisées

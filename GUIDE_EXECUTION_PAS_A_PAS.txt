@@ -19,6 +19,37 @@ COMMENT LIRE CE GUIDE
 - NE PAS SAUTER d'étape, même les évidentes.
 
 ================================================================================
+AVERTISSEMENT ISRAËL — LIRE AVANT TOUT
+================================================================================
+
+⚠️  Le projet est basé et opéré DEPUIS ISRAËL. Tout le reste découle de ça.
+
+   PAIEMENT
+   - Shopify Payments = PAS DISPONIBLE en Israël
+   - Stripe = PAS DISPONIBLE pour marchands israéliens
+   - Solution : PayPlus (payplus.co.il) — gateway israélien, app Shopify officielle
+   - Complément : PayPal Business (fonctionne depuis Israël)
+
+   ENTITÉ LÉGALE
+   - Pas de SIRET. Entité israélienne : עוסק מורשה (Osek Murshe) ou חברה בע"מ (Ltd)
+   - Pour Shopify : fournir numéro fiscal israélien (מספר עוסק) + passeport
+
+   TVA
+   - TVA israélienne : 17%
+   - Exports (clients FR/EU) : 0% TVA côté Israël — le client paie la TVA locale
+   - Facturation EUR pour clients français = pas de TVA IL à appliquer
+
+   EXPÉDITION
+   - DHL Express Israel (dhl.com/il) ou FedEx Israel (fedex.com/il)
+   - Israel Post EMS pour colis <2kg vers Europe (~10-14 jours, moins cher)
+   - Délai vers France : 3-7 jours ouvrés (DHL) / 5-10 jours (Israel Post EMS)
+   - Documents diamants >1ct : certificat Kimberley Process (à charge fabricant)
+
+   RGPD
+   - S'applique pour tous clients européens (France incluse)
+   - Politique de confidentialité doit mentionner transferts hors EU
+
+================================================================================
 BLOC 0 — AVANT TOUT (Réflexion, décisions, prérequis)
 Durée totale : 2-4 heures
 ================================================================================
@@ -51,13 +82,13 @@ Quoi : Avoir prêt et fonctionnel sur ta machine :
    - Navigateur Chrome (à jour)
    - 1Password ou Bitwarden (gestion mots de passe)
    - Notion ou un Google Doc partagé "BIJOU-R — Logs"
-   - Compte bancaire pro ou perso prêt pour paiements (CB)
-   - Pièce d'identité scannée (PDF) — exigée par Shopify Payments
-   - RIB IBAN — exigé par Shopify Payments
-   - SIRET / numéro de micro-entreprise (ou en cours)
+   - Compte bancaire israélien (pro ou perso) pour les virements PayPlus
+   - Passeport israelien ou teudat zehut (pièce d'identité) — exigée par PayPlus + Shopify
+   - מספר עוסק (numéro d'entreprise israelien) pour PayPlus
+   - IBAN du compte bancaire pour les virements entrants
 Résultat : tout est sous la main, pas d'allers-retours.
-Si ça bloque pas de SIRET : créer la micro-entreprise sur autoentrepreneur.urssaf.fr
-                            (15 min, gratuit, immatriculation 7-14 jours).
+Si ça bloque pas de מספר עוסק : ouvrir un עוסק מורשה via Misrad HaShilton (שע"מ) ou
+                                un comptable israelien — délai ~7 jours.
 
 ÉTAPE 0.4 — Vérifier disponibilité du nom de marque (30 min)
 -----------------------------------------------------------
@@ -236,28 +267,40 @@ Comment :
    5. Police corps : Inter
 Résultat : marque enregistrée (Shopify Email l'utilisera).
 
-ÉTAPE 2.5 — Activer Shopify Payments (30 min)
----------------------------------------------
-Où : Shopify Admin → Réglages → Paiements
-Comment :
-   1. Cliquer "Activer Shopify Payments".
-   2. Renseigner :
-      - SIRET / type d'entité
-      - Représentant légal (toi)
-      - Pièce d'identité (upload PDF recto-verso)
-      - Justificatif de domicile < 3 mois (upload)
-      - RIB IBAN pour les versements
-      - Description activité : "Vente en ligne de bijoux"
-   3. Soumettre. Vérification 1-3 jours ouvrés.
-Résultat : Shopify Payments en attente de vérification.
+ÉTAPE 2.5 — Configurer les paiements avec PayPlus (gateway israélien) (45 min)
+-------------------------------------------------------------------------------
+⚠️  Shopify Payments et Stripe NE SONT PAS disponibles pour marchands basés en Israël.
+    Solution : PayPlus (payplus.co.il) — gateway israélien, app Shopify officielle.
 
-ÉTAPE 2.6 — Ajouter PayPal et Apple Pay (10 min)
-------------------------------------------------
+Où : D'abord sur payplus.co.il, ensuite dans Shopify Admin → Apps → App Store
+Comment :
+   PARTIE A — Créer un compte marchand PayPlus :
+   1. Aller sur https://payplus.co.il
+   2. Cliquer "פתח חשבון" (Ouvrir un compte marchand)
+   3. Renseigner :
+      - מספר עוסק (numéro d'entreprise israelien)
+      - Pièce d'identité (passeport ou תעודת זהות recto-verso)
+      - IBAN du compte bancaire israelien pour les virements
+      - Description activité : "מכירת תכשיטים אונליין" (vente de bijoux en ligne)
+   4. Soumettre. Vérification 1-3 jours ouvrés par PayPlus.
+
+   PARTIE B — Installer l'app PayPlus dans Shopify :
+   1. Shopify Admin → Apps → App Store → chercher "PayPlus"
+   2. Installer l'app officielle PayPlus
+   3. Connecter avec les identifiants du compte PayPlus
+   4. Activer : Visa/Mastercard + Apple Pay + Google Pay
+
+Résultat : gateway de paiement actif, virements vers compte bancaire israelien.
+Si ça bloque : contacter support PayPlus (payplus.co.il/support).
+
+ÉTAPE 2.6 — Ajouter PayPal Business (10 min)
+---------------------------------------------
 Où : Shopify Admin → Réglages → Paiements → Méthodes de paiement supplémentaires
 Comment :
-   1. PayPal : connecter ton compte PayPal Business (ou en créer un).
-   2. Apple Pay : activé automatiquement via Shopify Payments une fois validé.
-Résultat : 3 modes de paiement.
+   1. PayPal : connecter ton compte PayPal Business israelien (ou créer sur paypal.com/il).
+      Note : PayPal fonctionne depuis Israël pour les marchands, sans restriction.
+   2. Apple Pay + Google Pay : déjà activés via PayPlus (étape 2.5).
+Résultat : 2 providers de paiement actifs (PayPlus + PayPal).
 
 ÉTAPE 2.7 — Configurer Shopify Markets pour France + Israël (20 min)
 --------------------------------------------------------------------
@@ -291,9 +334,13 @@ Comment :
    2. Politique de confidentialité : générer via le bouton Shopify + adapter RGPD.
    3. Conditions générales de vente : générer + AJOUTER la clause garantie rachat 50% / 5 ans.
    4. Politique d'expédition : reprendre les tarifs Étape 2.8.
-   5. Mentions légales : nom légal, SIRET, RCS, hébergeur (Shopify Commerce Singapore).
+   5. Mentions légales : nom légal, מספר עוסק (numéro d'entreprise israelien),
+      adresse en Israël, hébergeur (Shopify Commerce Singapore).
+      Note : pas de SIRET/RCS (entité israélienne, pas française).
+      Pour clients FR : ajouter coordonnées de contact en français (obligatoire RGPD).
 Résultat : 5 politiques publiées sur le site.
-Si ça bloque : faire relire les CGV par un juriste à 150 € sur LegalPlace ou Captain Contrat.
+Si ça bloque : faire relire les CGV par un avocat israelien spécialisé commerce en ligne
+               ou un juriste franco-israelien (~150-300 €).
 
 ÉTAPE 2.10 — Notifications email transactionnelles (20 min)
 -----------------------------------------------------------
@@ -1091,7 +1138,8 @@ Comment :
 
 ÉTAPE 11.6 — Tester tous les flows (30 min)
 -------------------------------------------
-Comment : créer une commande test (en mode "Bogus Gateway" Shopify Payments)
+Comment : créer une commande test (mode "Bogus Gateway" dans Shopify Admin →
+        Réglages → Paiements → activer temporairement)
         de 3500 € pour déclencher VIP + high-AOV + first-time. Vérifier emails.
 Résultat : tous flows opérationnels.
 
